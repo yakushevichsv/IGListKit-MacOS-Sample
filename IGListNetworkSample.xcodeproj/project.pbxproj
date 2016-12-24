@@ -7,9 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
+		217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
+		2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */; };
+		2174819B1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */; };
+		218AEC641E0EF588005D1600 /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 218AEC5F1E0EF550005D1600 /* IGListKit.framework */; };
+		218AEC681E0F10A4005D1600 /* GitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC671E0F10A4005D1600 /* GitHubUser.m */; };
+		218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC671E0F10A4005D1600 /* GitHubUser.m */; };
+		218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC671E0F10A4005D1600 /* GitHubUser.m */; };
+		218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */; };
+		218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */; };
+		218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */; };
 		218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68611E0EC44E00BA844E /* AppDelegate.m */; };
 		218C68651E0EC44E00BA844E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68641E0EC44E00BA844E /* main.m */; };
-		218C68681E0EC44E00BA844E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68671E0EC44E00BA844E /* ViewController.m */; };
+		218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68671E0EC44E00BA844E /* GitHubSearchRepositoryVC.m */; };
 		218C686A1E0EC44E00BA844E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218C68691E0EC44E00BA844E /* Assets.xcassets */; };
 		218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218C686B1E0EC44E00BA844E /* Main.storyboard */; };
 		218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68771E0EC44E00BA844E /* IGListNetworkSampleTests.m */; };
@@ -17,6 +28,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		218AEC561E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 887D0B361D870D7E009E01F7;
+			remoteInfo = IGListKit;
+		};
+		218AEC581E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 887D0B3F1D870D7F009E01F7;
+			remoteInfo = IGListKitTests;
+		};
+		218AEC5A1E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 885FE1D41DC51A0D009CE2B4;
+			remoteInfo = "IGListKit-tvOS";
+		};
+		218AEC5C1E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 885FE1DC1DC51A0D009CE2B4;
+			remoteInfo = "IGListKit-tvOSTests";
+		};
+		218AEC5E1E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD3152AC1DE227FA00AC9D2C;
+			remoteInfo = "IGListKit-macOS";
+		};
+		218AEC601E0EF550005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 88DF897C1E010E6A00B1B9B4;
+			remoteInfo = "IGListKit-macOSTests";
+		};
+		218AEC621E0EF56C005D1600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DD3152661DE227FA00AC9D2C;
+			remoteInfo = "IGListKit-macOS";
+		};
 		218C68741E0EC44E00BA844E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 218C68551E0EC44E00BA844E /* Project object */;
@@ -34,12 +94,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		217481951E0F319C00A05928 /* GitHubSearchRepositoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryItem.h; path = Views/GitHubSearchRepositoryItem.h; sourceTree = "<group>"; };
+		217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryItem.m; path = Views/GitHubSearchRepositoryItem.m; sourceTree = "<group>"; };
+		217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GitHubSearchRepositoryItem.xib; path = Views/GitHubSearchRepositoryItem.xib; sourceTree = "<group>"; };
+		218AEC491E0EED7A005D1600 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IGListKit.xcodeproj; path = IGListKit/IGListKit.xcodeproj; sourceTree = "<group>"; };
+		218AEC661E0F10A4005D1600 /* GitHubUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubUser.h; path = Models/GitHubUser.h; sourceTree = "<group>"; };
+		218AEC671E0F10A4005D1600 /* GitHubUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubUser.m; path = Models/GitHubUser.m; sourceTree = "<group>"; };
+		218AEC6B1E0F1BD8005D1600 /* GitHubRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubRepository.h; path = Models/GitHubRepository.h; sourceTree = "<group>"; };
+		218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubRepository.m; path = Models/GitHubRepository.m; sourceTree = "<group>"; };
 		218C685D1E0EC44E00BA844E /* IGListNetworkSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGListNetworkSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C68601E0EC44E00BA844E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		218C68611E0EC44E00BA844E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		218C68641E0EC44E00BA844E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		218C68661E0EC44E00BA844E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		218C68671E0EC44E00BA844E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		218C68661E0EC44E00BA844E /* GitHubSearchRepositoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitHubSearchRepositoryVC.h; sourceTree = "<group>"; };
+		218C68671E0EC44E00BA844E /* GitHubSearchRepositoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitHubSearchRepositoryVC.m; sourceTree = "<group>"; };
 		218C68691E0EC44E00BA844E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		218C686C1E0EC44E00BA844E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		218C686E1E0EC44E00BA844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +118,7 @@
 		218C687E1E0EC44E00BA844E /* IGListNetworkSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IGListNetworkSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListNetworkSampleUITests.m; sourceTree = "<group>"; };
 		218C68841E0EC44E00BA844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		218C68901E0EC97000BA844E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218AEC641E0EF588005D1600 /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +147,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		217481881E0F248400A05928 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2174819C1E0F35A600A05928 /* GitHubSearchRepository */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2174819C1E0F35A600A05928 /* GitHubSearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				2174819D1E0F35B600A05928 /* Cell */,
+				218C68661E0EC44E00BA844E /* GitHubSearchRepositoryVC.h */,
+				218C68671E0EC44E00BA844E /* GitHubSearchRepositoryVC.m */,
+			);
+			name = GitHubSearchRepository;
+			sourceTree = "<group>";
+		};
+		2174819D1E0F35B600A05928 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				217481951E0F319C00A05928 /* GitHubSearchRepositoryItem.h */,
+				217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */,
+				217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		218AEC4A1E0EED81005D1600 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+				218C68901E0EC97000BA844E /* Podfile */,
+				218AEC491E0EED7A005D1600 /* Cartfile */,
+			);
+			name = Deployment;
+			sourceTree = "<group>";
+		};
+		218AEC4B1E0EF509005D1600 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				218AEC4C1E0EF511005D1600 /* IGListKit */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		218AEC4C1E0EF511005D1600 /* IGListKit */ = {
+			isa = PBXGroup;
+			children = (
+				218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */,
+			);
+			name = IGListKit;
+			sourceTree = "<group>";
+		};
+		218AEC4E1E0EF550005D1600 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				218AEC571E0EF550005D1600 /* IGListKit.framework */,
+				218AEC591E0EF550005D1600 /* IGListKitTests.xctest */,
+				218AEC5B1E0EF550005D1600 /* IGListKit.framework */,
+				218AEC5D1E0EF550005D1600 /* IGListKit-tvOSTests.xctest */,
+				218AEC5F1E0EF550005D1600 /* IGListKit.framework */,
+				218AEC611E0EF550005D1600 /* IGListKit-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		218AEC651E0F0FCC005D1600 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				218AEC661E0F10A4005D1600 /* GitHubUser.h */,
+				218AEC671E0F10A4005D1600 /* GitHubUser.m */,
+				218AEC6B1E0F1BD8005D1600 /* GitHubRepository.h */,
+				218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		218C68541E0EC44E00BA844E = {
 			isa = PBXGroup;
 			children = (
+				218AEC4B1E0EF509005D1600 /* External */,
 				218C685F1E0EC44E00BA844E /* IGListNetworkSample */,
 				218C68761E0EC44E00BA844E /* IGListNetworkSampleTests */,
 				218C68811E0EC44E00BA844E /* IGListNetworkSampleUITests */,
+				218AEC4A1E0EED81005D1600 /* Deployment */,
 				218C685E1E0EC44E00BA844E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,10 +249,10 @@
 		218C685F1E0EC44E00BA844E /* IGListNetworkSample */ = {
 			isa = PBXGroup;
 			children = (
+				218AEC651E0F0FCC005D1600 /* Models */,
 				218C68601E0EC44E00BA844E /* AppDelegate.h */,
 				218C68611E0EC44E00BA844E /* AppDelegate.m */,
-				218C68661E0EC44E00BA844E /* ViewController.h */,
-				218C68671E0EC44E00BA844E /* ViewController.m */,
+				217481881E0F248400A05928 /* Views */,
 				218C68691E0EC44E00BA844E /* Assets.xcassets */,
 				218C686B1E0EC44E00BA844E /* Main.storyboard */,
 				218C686E1E0EC44E00BA844E /* Info.plist */,
@@ -151,6 +301,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				218AEC631E0EF56C005D1600 /* PBXTargetDependency */,
 			);
 			name = IGListNetworkSample;
 			productName = IGListNetworkSample;
@@ -232,6 +383,12 @@
 			mainGroup = 218C68541E0EC44E00BA844E;
 			productRefGroup = 218C685E1E0EC44E00BA844E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 218AEC4E1E0EF550005D1600 /* Products */;
+					ProjectRef = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				218C685C1E0EC44E00BA844E /* IGListNetworkSample */,
@@ -241,6 +398,51 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		218AEC571E0EF550005D1600 /* IGListKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IGListKit.framework;
+			remoteRef = 218AEC561E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218AEC591E0EF550005D1600 /* IGListKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IGListKitTests.xctest;
+			remoteRef = 218AEC581E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218AEC5B1E0EF550005D1600 /* IGListKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IGListKit.framework;
+			remoteRef = 218AEC5A1E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218AEC5D1E0EF550005D1600 /* IGListKit-tvOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "IGListKit-tvOSTests.xctest";
+			remoteRef = 218AEC5C1E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218AEC5F1E0EF550005D1600 /* IGListKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IGListKit.framework;
+			remoteRef = 218AEC5E1E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		218AEC611E0EF550005D1600 /* IGListKit-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "IGListKit-macOSTests.xctest";
+			remoteRef = 218AEC601E0EF550005D1600 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		218C685B1E0EC44E00BA844E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -248,6 +450,7 @@
 			files = (
 				218C686A1E0EC44E00BA844E /* Assets.xcassets in Resources */,
 				218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */,
+				2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +465,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2174819B1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				218C68681E0EC44E00BA844E /* ViewController.m in Sources */,
+				218AEC681E0F10A4005D1600 /* GitHubUser.m in Sources */,
+				218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */,
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
+				218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +489,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
+				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,13 +499,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
+				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		218AEC631E0EF56C005D1600 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "IGListKit-macOS";
+			targetProxy = 218AEC621E0EF56C005D1600 /* PBXContainerItemProxy */;
+		};
 		218C68751E0EC44E00BA844E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 218C685C1E0EC44E00BA844E /* IGListNetworkSample */;
@@ -416,6 +633,7 @@
 				DEVELOPMENT_TEAM = 44P2L32FL4;
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.IGListNetworkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -429,6 +647,7 @@
 				DEVELOPMENT_TEAM = 44P2L32FL4;
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.IGListNetworkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -507,6 +726,7 @@
 				218C68891E0EC44E00BA844E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		218C688A1E0EC44E00BA844E /* Build configuration list for PBXNativeTarget "IGListNetworkSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +735,7 @@
 				218C688C1E0EC44E00BA844E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		218C688D1E0EC44E00BA844E /* Build configuration list for PBXNativeTarget "IGListNetworkSampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +744,7 @@
 				218C688F1E0EC44E00BA844E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

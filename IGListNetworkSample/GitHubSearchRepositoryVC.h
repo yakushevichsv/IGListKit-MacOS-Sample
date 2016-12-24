@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GitHubSearchRepositoryVC.h
 //  IGListNetworkSample
 //
 //  Created by Siarhei Yakushevich on 12/24/16.
@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
+@interface GitHubSearchRepositoryVC : NSViewController
 
 
 @end
