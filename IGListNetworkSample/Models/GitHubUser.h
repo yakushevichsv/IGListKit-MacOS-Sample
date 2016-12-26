@@ -9,7 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <IGListKit/IGListKit.h>
 
-@interface GitHubUser : NSObject<IGListDiffable>
+@protocol IDictionaryLiteralConvertible <NSObject>
+
+- (instancetype _Nonnull)initWithDictionary:(NSDictionary * _Nonnull)dic;
+
+@end
+
+@interface GitHubUser : NSObject<IGListDiffable, IDictionaryLiteralConvertible>
 
 @property (nonatomic) NSInteger ID;
 @property (nonatomic) NSString* _Nonnull login;

@@ -10,6 +10,18 @@
 
 @implementation GitHubUser
 
+#pragma mark - IDictionaryLiteralConvertible
+
+- (instancetype)initWithDictionary:(NSDictionary *)dic {
+    if (self = [super init]) {
+    self.login = [dic[@"login"] description];
+    self.ID = [dic[@"id"] integerValue];
+    self.url = [[NSURL alloc] initWithString:[dic[@"url"] description]];
+    self.imageURL = [[NSURL alloc] initWithString:[dic[@"avatar_url"] description]];
+    }
+    return self;
+}
+
 #pragma mark - IGListDiffable
 
 - (nonnull id<NSObject>)diffIdentifier {

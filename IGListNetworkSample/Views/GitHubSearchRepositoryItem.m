@@ -7,6 +7,7 @@
 //
 
 #import "GitHubSearchRepositoryItem.h"
+#import "GitHubRepository.h"
 
 @interface GitHubSearchRepositoryItem ()<NSCollectionViewElement>
 
@@ -25,9 +26,11 @@
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
-    NSDictionary * dic = (NSDictionary *)representedObject;
-    if (![dic isKindOfClass:[NSDictionary class]]) return;
-    self.tfName.stringValue = dic[@"name"];
+    GitHubRepository* repo = (GitHubRepository *)representedObject;
+    if (![repo isKindOfClass:[GitHubRepository class]]) return;
+    self.tfName.stringValue = repo.name;
+    self.tfFullName.stringValue = repo.fullName;
+    self.tfDescription.stringValue = repo.repoDescription;
 }
 
 @end

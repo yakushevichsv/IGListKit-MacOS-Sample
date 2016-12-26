@@ -8,17 +8,67 @@
 
 #import "GitHubSearchRepositoryVC.h"
 #import "GitHubSearchRepositoryItem.h"
+#import "IGitHubSearchRepositoryViewModel.h"
 
 @interface GitHubSearchRepositoryVC()<NSCollectionViewDelegate, NSCollectionViewDataSource>
+{
+    id<IGitHubSearchRepositoryViewModel> _modelPrivate;
+}
 
-@property (nonatomic, weak) IBOutlet NSSearchField* sfRepository;
+typedef NSArray<GitHubRepository *> RepoArray;
+
+@property (nonatomic,strong) RepoArray *repositories;
+@property (nonatomic, weak) IBOutlet NSSearchField *sfRepository;
 @property (nonatomic, weak) IBOutlet NSButton *btnSearch;
-
+@property (nonatomic) BOOL isSearching;
 @property (nonatomic, assign) IBOutlet NSCollectionView * _Nullable  cvRepository;
 
 @end
 
 @implementation GitHubSearchRepositoryVC
+
+- (void)setModel:(id<IGitHubSearchRepositoryViewModel>)model {
+    _modelPrivate = model;
+    [self configure];
+}
+
+- (id<IGitHubSearchRepositoryViewModel>)model {
+    return _modelPrivate;
+}
+
+- (void)configure {
+    if ([self model] != nil && !self.isSearching) {
+        __weak typeof(self) wSelf = self;
+        self.isSearching = true;
+        NSLog(@"Searching Repo...");
+        NSString *query = @"Tetris";
+        [self.model searchRepositories:query startIndex:0 completion:^(RepoArray *repositories, NSError *error) {
+            NSLog(@"Finished Searching Repo is Error %@",error);
+            wSelf.isSearching = false;
+            if (error == nil && repositories.count != 0) {
+                
+                NSMutableArray<GitHubRepository *> *mArray = [NSMutableArray new];
+                
+                if (wSelf.repositories.count)
+                    [mArray addObjectsFromArray:wSelf.repositories];
+                [mArray addObjectsFromArray:repositories];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    wSelf.repositories = mArray;
+                    if (wSelf.isViewLoaded) {
+                        wSelf.sfRepository.stringValue = query;
+                        [wSelf.cvRepository reloadData];
+                    }
+                });
+            }
+            else {
+                //TODO: display item...
+            }
+        } cancel:^{
+            wSelf.isSearching = false;
+        }];
+    }
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -52,6 +102,7 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    [self configure];
 }
 
 
@@ -67,13 +118,14 @@
 }
 
 - (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return [self.repositories count];
 }
 
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
     GitHubSearchRepositoryItem * item = [collectionView makeItemWithIdentifier:[[self class] collectionItemCellName]  forIndexPath:indexPath];
+    
     //TODO: continue here...
-    [item setRepresentedObject:@{@"name": @"Test sample"}];
+    [item setRepresentedObject:self.repositories[indexPath.item]];
     return item;
 }
 

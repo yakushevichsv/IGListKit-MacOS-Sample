@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <IGListKit/IGListKit.h>
+#import "GitHubUser.h"
 
-@class GitHubUser;
 
-@interface GitHubRepository : NSObject<IGListDiffable>
+@interface GitHubRepository : NSObject<IGListDiffable, IDictionaryLiteralConvertible>
 
 @property (nonatomic) NSInteger ID;
 @property (nonatomic) NSString* _Nonnull name;

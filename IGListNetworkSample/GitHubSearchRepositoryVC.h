@@ -7,9 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@protocol IGitHubSearchRepositoryViewModel;
 
 @interface GitHubSearchRepositoryVC : NSViewController
 
+@property (nonatomic, strong) id<IGitHubSearchRepositoryViewModel> model;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Coordinator.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    NSApplication *sApp = [NSApplication sharedApplication];
+    [Coordinator defineRootController:(sApp.mainWindow ?: sApp.windows.firstObject).windowController];
 }
 
 

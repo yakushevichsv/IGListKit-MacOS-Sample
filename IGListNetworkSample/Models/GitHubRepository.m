@@ -10,6 +10,26 @@
 
 @implementation GitHubRepository
 
+#pragma mark - IDictionaryLiteralConvertible
+
+- (instancetype)initWithDictionary:(NSDictionary *)dic {
+    if (self = [super init]) {
+        self.name = [dic[@"name"] description];
+        self.ID = [dic[@"id"] integerValue];
+        self.fullName = [dic[@"full_name"] description];
+        self.repoDescription = [dic[@"description"] description];
+        
+        NSDictionary * ownerDic = (NSDictionary *)dic[@"owner"];
+        if ([ownerDic isKindOfClass:[NSDictionary class]]){
+            self.owner = [[GitHubUser alloc] initWithDictionary:ownerDic];
+        }
+        else
+            NSAssert(false, @"Owner can't be created");
+    }
+    return self;
+}
+
+
 #pragma mark - IGListDiffable
 
 - (nonnull id<NSObject>)diffIdentifier {

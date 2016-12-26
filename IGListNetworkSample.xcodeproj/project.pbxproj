@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211A9B581E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
+		211A9B591E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
+		211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
+		2128064C1E0FEC780044D3D4 /* Tetris1-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 2128064B1E0FEC780044D3D4 /* Tetris1-29.json */; };
+		212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
+		212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
+		212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
 		217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
 		2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */; };
@@ -94,6 +101,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211A9B561E112F5000E689B0 /* Coordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinator.h; path = Coordinator/Coordinator.h; sourceTree = "<group>"; };
+		211A9B571E112F5000E689B0 /* Coordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinator.m; path = Coordinator/Coordinator.m; sourceTree = "<group>"; };
+		2128064B1E0FEC780044D3D4 /* Tetris1-29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Tetris1-29.json"; sourceTree = "<group>"; };
+		212806531E0FED4E0044D3D4 /* IGitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGitHubSearchRepositoryViewModel.h; path = ViewModels/IGitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
+		212806551E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryViewModel.h; path = ViewModels/GitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
+		212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryViewModel.m; path = ViewModels/GitHubSearchRepositoryViewModel.m; sourceTree = "<group>"; };
 		217481951E0F319C00A05928 /* GitHubSearchRepositoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryItem.h; path = Views/GitHubSearchRepositoryItem.h; sourceTree = "<group>"; };
 		217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryItem.m; path = Views/GitHubSearchRepositoryItem.m; sourceTree = "<group>"; };
 		217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GitHubSearchRepositoryItem.xib; path = Views/GitHubSearchRepositoryItem.xib; sourceTree = "<group>"; };
@@ -147,6 +160,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211A9B501E112D4D00E689B0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				211A9B561E112F5000E689B0 /* Coordinator.h */,
+				211A9B571E112F5000E689B0 /* Coordinator.m */,
+			);
+			name = Coordinator;
+			sourceTree = "<group>";
+		};
+		212806521E0FECE50044D3D4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				212806541E0FED5C0044D3D4 /* GitHubSearchRepositoryVM */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		212806541E0FED5C0044D3D4 /* GitHubSearchRepositoryVM */ = {
+			isa = PBXGroup;
+			children = (
+				212806531E0FED4E0044D3D4 /* IGitHubSearchRepositoryViewModel.h */,
+				212806551E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.h */,
+				212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */,
+			);
+			name = GitHubSearchRepositoryVM;
+			sourceTree = "<group>";
+		};
+		2128065A1E0FEEBD0044D3D4 /* Tetris */ = {
+			isa = PBXGroup;
+			children = (
+				2128064B1E0FEC780044D3D4 /* Tetris1-29.json */,
+			);
+			name = Tetris;
+			sourceTree = "<group>";
+		};
 		217481881E0F248400A05928 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,12 +297,14 @@
 		218C685F1E0EC44E00BA844E /* IGListNetworkSample */ = {
 			isa = PBXGroup;
 			children = (
+				211A9B501E112D4D00E689B0 /* Coordinator */,
+				212806521E0FECE50044D3D4 /* ViewModels */,
 				218AEC651E0F0FCC005D1600 /* Models */,
-				218C68601E0EC44E00BA844E /* AppDelegate.h */,
-				218C68611E0EC44E00BA844E /* AppDelegate.m */,
 				217481881E0F248400A05928 /* Views */,
 				218C68691E0EC44E00BA844E /* Assets.xcassets */,
 				218C686B1E0EC44E00BA844E /* Main.storyboard */,
+				218C68601E0EC44E00BA844E /* AppDelegate.h */,
+				218C68611E0EC44E00BA844E /* AppDelegate.m */,
 				218C686E1E0EC44E00BA844E /* Info.plist */,
 				218C68631E0EC44E00BA844E /* Supporting Files */,
 			);
@@ -265,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				218C68641E0EC44E00BA844E /* main.m */,
+				2128065A1E0FEEBD0044D3D4 /* Tetris */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -450,6 +501,7 @@
 			files = (
 				218C686A1E0EC44E00BA844E /* Assets.xcassets in Resources */,
 				218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */,
+				2128064C1E0FEC780044D3D4 /* Tetris1-29.json in Resources */,
 				2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,8 +532,10 @@
 				218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */,
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
+				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
 				218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
+				212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +546,8 @@
 				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
+				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +555,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
+				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
