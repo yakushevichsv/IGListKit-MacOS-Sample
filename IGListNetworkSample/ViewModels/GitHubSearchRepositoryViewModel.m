@@ -8,59 +8,112 @@
 
 #import "GitHubSearchRepositoryViewModel.h"
 #import "GitHubRepository.h"
+#import <AFNetworking/AFNetworking.h>
+
+@interface GitHubSearchRepositoryViewModel()
+@property (nonatomic, strong) NSString *sQuery;
+@property (nonatomic, strong) AFHTTPSessionManager *manager;
+@property (nonatomic, strong) NSURLSessionDataTask *currentTask;
+@end
 
 @implementation GitHubSearchRepositoryViewModel
 
-- (void)cancelCurrentActiveSearch {
-    
+- (instancetype)init {
+    if (self = [super init]) {
+        NSURL *baseURL = [NSURL URLWithString:@"https://api.github.com"];
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+        //https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
+        self.manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+        
+        dispatch_queue_t queue;
+        dispatch_queue_attr_t attr;
+        attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_DEFAULT, 0);
+        queue = dispatch_queue_create("IGSample.network.completion.queue", attr);
+        self.manager.completionQueue = queue;
+        //TODO: add support of rate limit....
+        /*
+         "X-RateLimit-Limit" = 10;
+         "X-RateLimit-Remaining" = 0;
+         "X-RateLimit-Reset" = 1482843086;
+         */
+    }
+    return self;
 }
 
-- (void)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel {
+
+#pragma mark - IGitHubSearchRepositoryViewModel
+
+- (BOOL)cancelCurrentActiveSearch {
+    return [self cancelCurrentActiveSearch:true];
+}
+
+- (BOOL)cancelCurrentActiveSearch:(BOOL)erraseQuery {
+    BOOL needCancellation = self.currentTask.state == NSURLSessionTaskStateRunning ||
+    self.currentTask.state == NSURLSessionTaskStateSuspended;
+    if (needCancellation)
+        [self.currentTask cancel];
+    self.currentTask = nil;
+    if (erraseQuery)
+        self.sQuery = nil;
+    return needCancellation;
+}
+
+- (BOOL)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel {
     
-#ifdef DEBUG
+    if ([query isEqualToString:self.sQuery] && self.sQuery.length)
+        return false;
     
-    if  ([query isEqualToString:@"Tetris"] && index >= 0 && index<28) {
+    [self cancelCurrentActiveSearch];
+    
+    static NSInteger perPage = 30;
+    
+    NSInteger pageNumber = index/perPage + 1;
+ 
+    NSDictionary *parameters = @{@"q":query,
+                                 @"order":@"desc",
+                                 @"per_page": @(perPage),
+                                 @"page":@(pageNumber)};
+    
+    __weak typeof(self) wSelf = self;
+    self.sQuery = query;
+    self.currentTask =  [self.manager GET:@"/search/repositories" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [wSelf cancelCurrentActiveSearch:false];
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        NSLog(@"JSON response %@", dic);
+        //TODO: use Mapper library....
         
-        NSURL* url = [[NSBundle mainBundle]  URLForResource: [query stringByAppendingString:@"1-29"] withExtension:@"json"];
+        NSUInteger tCount = dic[@"total_count"] != nil ? [dic[@"total_count"] integerValue] : 0;
         
-        NSData * retData = [NSData dataWithContentsOfURL:url];
-        NSError *error = nil;
         
-        NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:retData options:NSJSONReadingAllowFragments error:&error];
+        NSArray *repoArray = (NSArray *)dic[@"items"];
+        if ([repoArray isKindOfClass:[NSArray class]]) {
         
-        if (error == nil && [dic isKindOfClass:[NSDictionary class]]){
-            //dic[@"items"]
-            NSInteger tCount = [dic[@"total_count"] integerValue];
+            BOOL isLast = tCount < repoArray.count + index;
+            NSLog(@"Is last search %d", isLast);
+            //BOOL isLast2 = [dic[@"incomplete_results"] boolValue] == false;
+            //NSParameterAssert(isLast == isLast2);
+            NSMutableArray<GitHubRepository*> *resArray = [NSMutableArray new];
             
+            [repoArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                GitHubRepository *repo = [[GitHubRepository alloc] initWithDictionary:(NSDictionary *)obj];
+                [resArray addObject:repo];
+            }];
             
-            NSArray *repoArray = (NSArray *)dic[@"items"];
-            if ([repoArray isKindOfClass:[NSArray class]]) {
-                BOOL isLast = index + 1 + repoArray.count >= tCount;
-                NSLog(@"Is Last item %d",isLast);
-                
-                NSMutableArray<GitHubRepository*> *resArray = [NSMutableArray new];
-                
-                [repoArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    GitHubRepository *repo = [[GitHubRepository alloc] initWithDictionary:(NSDictionary *)obj];
-                    [resArray addObject:repo];
-                }];
-                
-                completion([resArray copy],nil);
-            }
-            else
-                completion(nil, nil);
+            completion([resArray copy],nil);
         }
-        else {
-            NSLog(@"JSON Error %@",error);
+        else
+            completion(nil,nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [wSelf cancelCurrentActiveSearch];
+
+        NSLog(@"Error %@", [error debugDescription]);
+        if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorCancelled)
+            cancel();
+        else
             completion(nil,error);
-        }
-    }
-    else {
-        cancel();
-    }
-    
-#endif
-    
+    }];
+    NSParameterAssert(self.currentTask.state == NSURLSessionTaskStateRunning);
+    return true;
 }
 
 @end

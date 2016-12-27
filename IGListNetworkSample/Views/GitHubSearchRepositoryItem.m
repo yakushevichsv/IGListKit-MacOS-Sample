@@ -24,6 +24,13 @@
     // Do view setup here.
 }
 
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    self.tfName.stringValue = @"";
+    self.tfFullName.stringValue = @"";
+    self.tfDescription.stringValue = @"";
+}
+
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
     GitHubRepository* repo = (GitHubRepository *)representedObject;

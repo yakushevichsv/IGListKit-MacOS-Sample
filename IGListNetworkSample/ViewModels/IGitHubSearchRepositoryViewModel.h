@@ -14,7 +14,7 @@ typedef dispatch_block_t CancelBlock;
 @protocol IGitHubSearchRepositoryViewModel <NSObject>
 
 typedef void (^GitHubSearchBlock)(NSArray<GitHubRepository *> *repositories, NSError *error);
-- (void)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel;
-- (void)cancelCurrentActiveSearch;
+- (BOOL)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel;
+- (BOOL)cancelCurrentActiveSearch;
 
 @end

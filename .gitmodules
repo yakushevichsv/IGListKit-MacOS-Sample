@@ -1,3 +1,12 @@
 [submodule "IGListKit"]
 	path = IGListKit
 	url = https://github.com/Instagram/IGListKit.git
+[submodule "ReactiveObjC"]
+	path = ReactiveObjC
+	url = https://github.com/ReactiveCocoa/ReactiveObjC.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
+[submodule "jsonmodel"]
+	path = jsonmodel
+	url = https://github.com/jsonmodel/jsonmodel.git

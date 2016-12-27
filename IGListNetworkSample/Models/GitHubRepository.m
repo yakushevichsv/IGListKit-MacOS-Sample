@@ -17,7 +17,12 @@
         self.name = [dic[@"name"] description];
         self.ID = [dic[@"id"] integerValue];
         self.fullName = [dic[@"full_name"] description];
-        self.repoDescription = [dic[@"description"] description];
+        
+        NSString *descr = dic[@"description"];
+        if ([descr isKindOfClass:[NSNull class]])
+            descr = @"";
+        
+        self.repoDescription = [descr  description];
         
         NSDictionary * ownerDic = (NSDictionary *)dic[@"owner"];
         if ([ownerDic isKindOfClass:[NSDictionary class]]){

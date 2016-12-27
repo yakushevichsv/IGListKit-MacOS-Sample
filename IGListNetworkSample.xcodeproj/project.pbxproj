@@ -7,10 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2109D2FE1E11A29B003D2B67 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */; };
+		2109D3181E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
+		2109D3191E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
+		2109D31A1E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
+		2109D31B1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
+		2109D31C1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
+		2109D31D1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
+		2109D31E1E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
+		2109D31F1E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
+		2109D3201E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
+		2109D3211E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
+		2109D3221E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
+		2109D3231E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
+		2109D3241E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
+		2109D3251E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
+		2109D3261E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
+		2109D3271E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
+		2109D3281E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
+		2109D3291E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
+		2109D32A1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
+		2109D32B1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
+		2109D32C1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
+		2109D32D1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
+		2109D32E1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
+		2109D32F1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
+		21147F6D1E128F880066BB98 /* Tetris1-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 2128064B1E0FEC780044D3D4 /* Tetris1-29.json */; };
 		211A9B581E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
 		211A9B591E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
 		211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
-		2128064C1E0FEC780044D3D4 /* Tetris1-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 2128064B1E0FEC780044D3D4 /* Tetris1-29.json */; };
 		212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
@@ -32,6 +57,11 @@
 		218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218C686B1E0EC44E00BA844E /* Main.storyboard */; };
 		218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68771E0EC44E00BA844E /* IGListNetworkSampleTests.m */; };
 		218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */; };
+		21E730E21E119A530069FDAB /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E730D21E1199F10069FDAB /* ReactiveObjC.framework */; };
+		21E730E41E119AC50069FDAB /* ReactiveObjC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 21E730D21E1199F10069FDAB /* ReactiveObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21E731051E119FE50069FDAB /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E730F61E119FC90069FDAB /* AFNetworking.framework */; };
+		21E7310C1E11A0600069FDAB /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 21E730F61E119FC90069FDAB /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21E7310D1E11A0E20069FDAB /* IGListKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 218AEC5F1E0EF550005D1600 /* IGListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,9 +128,154 @@
 			remoteGlobalIDString = 218C685C1E0EC44E00BA844E;
 			remoteInfo = IGListNetworkSample;
 		};
+		21E730D11E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725EA19E49ED7006002AA;
+			remoteInfo = "ReactiveObjC-macOS";
+		};
+		21E730D31E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D04725F519E49ED7006002AA;
+			remoteInfo = "ReactiveObjC-macOSTests";
+		};
+		21E730D51E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047260C19E49F82006002AA;
+			remoteInfo = "ReactiveObjC-iOS";
+		};
+		21E730D71E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D047261619E49F82006002AA;
+			remoteInfo = "ReactiveObjC-iOSTests";
+		};
+		21E730D91E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9B315541B3940610001CB9C;
+			remoteInfo = "ReactiveObjC-watchOS";
+		};
+		21E730DB1E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 57A4D2411BA13D7A00F7D4B1;
+			remoteInfo = "ReactiveObjC-tvOS";
+		};
+		21E730DD1E1199F10069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7DFBED031CDB8C9500EE435B;
+			remoteInfo = "ReactiveObjC-tvOSTests";
+		};
+		21E730E01E119A440069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D04725E919E49ED7006002AA;
+			remoteInfo = "ReactiveObjC-macOS";
+		};
+		21E730F11E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522391BBF104D00859F49;
+			remoteInfo = "AFNetworking iOS";
+		};
+		21E730F31E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522651BBF129200859F49;
+			remoteInfo = "AFNetworking watchOS";
+		};
+		21E730F51E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 299522771BBF136400859F49;
+			remoteInfo = "AFNetworking OS X";
+		};
+		21E730F71E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2987B0A51BC408A200179A4C;
+			remoteInfo = "AFNetworking tvOS";
+		};
+		21E730F91E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 298D7C3B1BC2C79500FD3B3E;
+			remoteInfo = "AFNetworking iOS Tests";
+		};
+		21E730FB1E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 298D7C4A1BC2C7B200FD3B3E;
+			remoteInfo = "AFNetworking Mac OS X Tests";
+		};
+		21E730FD1E119FC90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2987B0AE1BC408A200179A4C;
+			remoteInfo = "AFNetworking tvOS Tests";
+		};
+		21E731091E119FF90069FDAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 299522761BBF136400859F49;
+			remoteInfo = "AFNetworking OS X";
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		21E730E31E119AAC0069FDAB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				21E7310D1E11A0E20069FDAB /* IGListKit.framework in CopyFiles */,
+				21E7310C1E11A0600069FDAB /* AFNetworking.framework in CopyFiles */,
+				21E730E41E119AC50069FDAB /* ReactiveObjC.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2109D3011E11A2DC003D2B67 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		2109D3021E11A2DC003D2B67 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		2109D3031E11A2DC003D2B67 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		2109D3051E11A2DC003D2B67 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		2109D3061E11A2DC003D2B67 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		2109D3071E11A2DC003D2B67 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = jsonmodel/JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
+		2109D3091E11A2DC003D2B67 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		2109D30A1E11A2DC003D2B67 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		2109D30B1E11A2DC003D2B67 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		2109D30D1E11A2DC003D2B67 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		2109D3101E11A2DC003D2B67 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		2109D3121E11A2DC003D2B67 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		211A9B561E112F5000E689B0 /* Coordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinator.h; path = Coordinator/Coordinator.h; sourceTree = "<group>"; };
 		211A9B571E112F5000E689B0 /* Coordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinator.m; path = Coordinator/Coordinator.m; sourceTree = "<group>"; };
 		2128064B1E0FEC780044D3D4 /* Tetris1-29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Tetris1-29.json"; sourceTree = "<group>"; };
@@ -132,6 +307,8 @@
 		218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListNetworkSampleUITests.m; sourceTree = "<group>"; };
 		218C68841E0EC44E00BA844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218C68901E0EC97000BA844E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveObjC.xcodeproj; path = ReactiveObjC/ReactiveObjC.xcodeproj; sourceTree = "<group>"; };
+		21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +316,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2109D2FE1E11A29B003D2B67 /* SystemConfiguration.framework in Frameworks */,
+				21E731051E119FE50069FDAB /* AFNetworking.framework in Frameworks */,
+				21E730E21E119A530069FDAB /* ReactiveObjC.framework in Frameworks */,
 				218AEC641E0EF588005D1600 /* IGListKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +340,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2109D2FC1E11A29A003D2B67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2109D3001E11A2DC003D2B67 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				2109D3011E11A2DC003D2B67 /* JSONModel.h */,
+				2109D3021E11A2DC003D2B67 /* JSONModel.m */,
+				2109D3031E11A2DC003D2B67 /* JSONModelClassProperty.h */,
+				2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */,
+				2109D3051E11A2DC003D2B67 /* JSONModelError.h */,
+				2109D3061E11A2DC003D2B67 /* JSONModelError.m */,
+			);
+			name = JSONModel;
+			path = jsonmodel/JSONModel/JSONModel;
+			sourceTree = "<group>";
+		};
+		2109D3081E11A2DC003D2B67 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				2109D3091E11A2DC003D2B67 /* JSONAPI.h */,
+				2109D30A1E11A2DC003D2B67 /* JSONAPI.m */,
+				2109D30B1E11A2DC003D2B67 /* JSONHTTPClient.h */,
+				2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */,
+				2109D30D1E11A2DC003D2B67 /* JSONModel+networking.h */,
+				2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */,
+			);
+			name = JSONModelNetworking;
+			path = jsonmodel/JSONModel/JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		2109D30F1E11A2DC003D2B67 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				2109D3101E11A2DC003D2B67 /* JSONKeyMapper.h */,
+				2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */,
+				2109D3121E11A2DC003D2B67 /* JSONValueTransformer.h */,
+				2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */,
+			);
+			name = JSONModelTransformations;
+			path = jsonmodel/JSONModel/JSONModelTransformations;
+			sourceTree = "<group>";
+		};
 		211A9B501E112D4D00E689B0 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +463,9 @@
 		218AEC4B1E0EF509005D1600 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				21E730E61E119FBF0069FDAB /* JSONModel */,
+				21E730E51E119FB80069FDAB /* AFNetworking */,
+				21E730DF1E1199FB0069FDAB /* ReactiveObjC */,
 				218AEC4C1E0EF511005D1600 /* IGListKit */,
 			);
 			name = External;
@@ -281,6 +512,7 @@
 				218C68811E0EC44E00BA844E /* IGListNetworkSampleUITests */,
 				218AEC4A1E0EED81005D1600 /* Deployment */,
 				218C685E1E0EC44E00BA844E /* Products */,
+				2109D2FC1E11A29A003D2B67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -338,6 +570,61 @@
 			path = IGListNetworkSampleUITests;
 			sourceTree = "<group>";
 		};
+		21E730C31E1199F10069FDAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21E730D21E1199F10069FDAB /* ReactiveObjC.framework */,
+				21E730D41E1199F10069FDAB /* ReactiveObjCTests.xctest */,
+				21E730D61E1199F10069FDAB /* ReactiveObjC.framework */,
+				21E730D81E1199F10069FDAB /* ReactiveObjCTests.xctest */,
+				21E730DA1E1199F10069FDAB /* ReactiveObjC.framework */,
+				21E730DC1E1199F10069FDAB /* ReactiveObjC.framework */,
+				21E730DE1E1199F10069FDAB /* ReactiveObjCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		21E730DF1E1199FB0069FDAB /* ReactiveObjC */ = {
+			isa = PBXGroup;
+			children = (
+				21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */,
+			);
+			name = ReactiveObjC;
+			sourceTree = "<group>";
+		};
+		21E730E51E119FB80069FDAB /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */,
+			);
+			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		21E730E61E119FBF0069FDAB /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				2109D3001E11A2DC003D2B67 /* JSONModel */,
+				2109D3071E11A2DC003D2B67 /* JSONModelLib.h */,
+				2109D3081E11A2DC003D2B67 /* JSONModelNetworking */,
+				2109D30F1E11A2DC003D2B67 /* JSONModelTransformations */,
+			);
+			name = JSONModel;
+			sourceTree = "<group>";
+		};
+		21E730E81E119FC90069FDAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				21E730F21E119FC90069FDAB /* AFNetworking.framework */,
+				21E730F41E119FC90069FDAB /* AFNetworking.framework */,
+				21E730F61E119FC90069FDAB /* AFNetworking.framework */,
+				21E730F81E119FC90069FDAB /* AFNetworking.framework */,
+				21E730FA1E119FC90069FDAB /* AFNetworking iOS Tests.xctest */,
+				21E730FC1E119FC90069FDAB /* AFNetworking Mac OS X Tests.xctest */,
+				21E730FE1E119FC90069FDAB /* AFNetworking tvOS Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,10 +635,13 @@
 				218C68591E0EC44E00BA844E /* Sources */,
 				218C685A1E0EC44E00BA844E /* Frameworks */,
 				218C685B1E0EC44E00BA844E /* Resources */,
+				21E730E31E119AAC0069FDAB /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				21E7310A1E119FF90069FDAB /* PBXTargetDependency */,
+				21E730E11E119A440069FDAB /* PBXTargetDependency */,
 				218AEC631E0EF56C005D1600 /* PBXTargetDependency */,
 			);
 			name = IGListNetworkSample;
@@ -436,8 +726,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 21E730E81E119FC90069FDAB /* Products */;
+					ProjectRef = 21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */;
+				},
+				{
 					ProductGroup = 218AEC4E1E0EF550005D1600 /* Products */;
 					ProjectRef = 218AEC4D1E0EF550005D1600 /* IGListKit.xcodeproj */;
+				},
+				{
+					ProductGroup = 21E730C31E1199F10069FDAB /* Products */;
+					ProjectRef = 21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -492,6 +790,104 @@
 			remoteRef = 218AEC601E0EF550005D1600 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		21E730D21E1199F10069FDAB /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = 21E730D11E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730D41E1199F10069FDAB /* ReactiveObjCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveObjCTests.xctest;
+			remoteRef = 21E730D31E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730D61E1199F10069FDAB /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = 21E730D51E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730D81E1199F10069FDAB /* ReactiveObjCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveObjCTests.xctest;
+			remoteRef = 21E730D71E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730DA1E1199F10069FDAB /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = 21E730D91E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730DC1E1199F10069FDAB /* ReactiveObjC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ReactiveObjC.framework;
+			remoteRef = 21E730DB1E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730DE1E1199F10069FDAB /* ReactiveObjCTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ReactiveObjCTests.xctest;
+			remoteRef = 21E730DD1E1199F10069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730F21E119FC90069FDAB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 21E730F11E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730F41E119FC90069FDAB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 21E730F31E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730F61E119FC90069FDAB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 21E730F51E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730F81E119FC90069FDAB /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = 21E730F71E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730FA1E119FC90069FDAB /* AFNetworking iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking iOS Tests.xctest";
+			remoteRef = 21E730F91E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730FC1E119FC90069FDAB /* AFNetworking Mac OS X Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking Mac OS X Tests.xctest";
+			remoteRef = 21E730FB1E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		21E730FE1E119FC90069FDAB /* AFNetworking tvOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AFNetworking tvOS Tests.xctest";
+			remoteRef = 21E730FD1E119FC90069FDAB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -501,7 +897,6 @@
 			files = (
 				218C686A1E0EC44E00BA844E /* Assets.xcassets in Resources */,
 				218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */,
-				2128064C1E0FEC780044D3D4 /* Tetris1-29.json in Resources */,
 				2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +905,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21147F6D1E128F880066BB98 /* Tetris1-29.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,7 +929,15 @@
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
 				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
+				2109D3271E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
+				2109D31E1E11A2DC003D2B67 /* JSONModelError.m in Sources */,
 				218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				2109D3241E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
+				2109D32A1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
+				2109D3181E11A2DC003D2B67 /* JSONModel.m in Sources */,
+				2109D32D1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
+				2109D3211E11A2DC003D2B67 /* JSONAPI.m in Sources */,
+				2109D31B1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
 				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 				212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
@@ -543,9 +947,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2109D3251E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
+				2109D31F1E11A2DC003D2B67 /* JSONModelError.m in Sources */,
+				2109D31C1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
+				2109D3221E11A2DC003D2B67 /* JSONAPI.m in Sources */,
+				2109D32E1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
 				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
+				2109D32B1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
+				2109D3281E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				2109D3191E11A2DC003D2B67 /* JSONModel.m in Sources */,
 				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
 				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
@@ -555,11 +967,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2109D31A1E11A2DC003D2B67 /* JSONModel.m in Sources */,
+				2109D31D1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
 				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
+				2109D3201E11A2DC003D2B67 /* JSONModelError.m in Sources */,
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
+				2109D32C1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
 				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
+				2109D3291E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				2109D3231E11A2DC003D2B67 /* JSONAPI.m in Sources */,
+				2109D32F1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
+				2109D3261E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,6 +1001,16 @@
 			isa = PBXTargetDependency;
 			target = 218C685C1E0EC44E00BA844E /* IGListNetworkSample */;
 			targetProxy = 218C687F1E0EC44E00BA844E /* PBXContainerItemProxy */;
+		};
+		21E730E11E119A440069FDAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ReactiveObjC-macOS";
+			targetProxy = 21E730E01E119A440069FDAB /* PBXContainerItemProxy */;
+		};
+		21E7310A1E119FF90069FDAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "AFNetworking OS X";
+			targetProxy = 21E731091E119FF90069FDAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -689,6 +1119,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 44P2L32FL4;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
+				);
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -703,6 +1137,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 44P2L32FL4;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
+				);
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
