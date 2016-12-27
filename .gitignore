@@ -36,7 +36,11 @@ Pods/
 Carthage/
 
 .DS_Store
-IGListNetworkSample.xcodeproj/xcuserdata/
+./IGListNetworkSample.xcodeproj/xcuserdata/
+./IGListNetworkSample.xcodeproj/project.xcworkspace/xcshareddata/
 .idea/
+./AFNetworking/
+./IGListKit/
+./ReactiveObjC/
 
 

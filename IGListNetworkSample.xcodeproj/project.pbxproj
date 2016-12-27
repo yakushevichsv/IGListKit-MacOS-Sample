@@ -8,30 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2109D2FE1E11A29B003D2B67 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */; };
-		2109D3181E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
-		2109D3191E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
-		2109D31A1E11A2DC003D2B67 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3021E11A2DC003D2B67 /* JSONModel.m */; };
-		2109D31B1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
-		2109D31C1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
-		2109D31D1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */; };
-		2109D31E1E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
-		2109D31F1E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
-		2109D3201E11A2DC003D2B67 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3061E11A2DC003D2B67 /* JSONModelError.m */; };
-		2109D3211E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
-		2109D3221E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
-		2109D3231E11A2DC003D2B67 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30A1E11A2DC003D2B67 /* JSONAPI.m */; };
-		2109D3241E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
-		2109D3251E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
-		2109D3261E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */; };
-		2109D3271E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
-		2109D3281E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
-		2109D3291E11A2DC003D2B67 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */; };
-		2109D32A1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
-		2109D32B1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
-		2109D32C1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */; };
-		2109D32D1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
-		2109D32E1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
-		2109D32F1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */; };
 		21147F6D1E128F880066BB98 /* Tetris1-29.json in Resources */ = {isa = PBXBuildFile; fileRef = 2128064B1E0FEC780044D3D4 /* Tetris1-29.json */; };
 		211A9B581E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
 		211A9B591E112F5000E689B0 /* Coordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 211A9B571E112F5000E689B0 /* Coordinator.m */; };
@@ -262,23 +238,6 @@
 
 /* Begin PBXFileReference section */
 		2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		2109D3011E11A2DC003D2B67 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
-		2109D3021E11A2DC003D2B67 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
-		2109D3031E11A2DC003D2B67 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
-		2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
-		2109D3051E11A2DC003D2B67 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
-		2109D3061E11A2DC003D2B67 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
-		2109D3071E11A2DC003D2B67 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = jsonmodel/JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
-		2109D3091E11A2DC003D2B67 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
-		2109D30A1E11A2DC003D2B67 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
-		2109D30B1E11A2DC003D2B67 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
-		2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
-		2109D30D1E11A2DC003D2B67 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
-		2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
-		2109D3101E11A2DC003D2B67 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
-		2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
-		2109D3121E11A2DC003D2B67 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
-		2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		211A9B561E112F5000E689B0 /* Coordinator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinator.h; path = Coordinator/Coordinator.h; sourceTree = "<group>"; };
 		211A9B571E112F5000E689B0 /* Coordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinator.m; path = Coordinator/Coordinator.m; sourceTree = "<group>"; };
 		2128064B1E0FEC780044D3D4 /* Tetris1-29.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Tetris1-29.json"; sourceTree = "<group>"; };
@@ -352,46 +311,6 @@
 				2109D2FD1E11A29B003D2B67 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2109D3001E11A2DC003D2B67 /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				2109D3011E11A2DC003D2B67 /* JSONModel.h */,
-				2109D3021E11A2DC003D2B67 /* JSONModel.m */,
-				2109D3031E11A2DC003D2B67 /* JSONModelClassProperty.h */,
-				2109D3041E11A2DC003D2B67 /* JSONModelClassProperty.m */,
-				2109D3051E11A2DC003D2B67 /* JSONModelError.h */,
-				2109D3061E11A2DC003D2B67 /* JSONModelError.m */,
-			);
-			name = JSONModel;
-			path = jsonmodel/JSONModel/JSONModel;
-			sourceTree = "<group>";
-		};
-		2109D3081E11A2DC003D2B67 /* JSONModelNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				2109D3091E11A2DC003D2B67 /* JSONAPI.h */,
-				2109D30A1E11A2DC003D2B67 /* JSONAPI.m */,
-				2109D30B1E11A2DC003D2B67 /* JSONHTTPClient.h */,
-				2109D30C1E11A2DC003D2B67 /* JSONHTTPClient.m */,
-				2109D30D1E11A2DC003D2B67 /* JSONModel+networking.h */,
-				2109D30E1E11A2DC003D2B67 /* JSONModel+networking.m */,
-			);
-			name = JSONModelNetworking;
-			path = jsonmodel/JSONModel/JSONModelNetworking;
-			sourceTree = "<group>";
-		};
-		2109D30F1E11A2DC003D2B67 /* JSONModelTransformations */ = {
-			isa = PBXGroup;
-			children = (
-				2109D3101E11A2DC003D2B67 /* JSONKeyMapper.h */,
-				2109D3111E11A2DC003D2B67 /* JSONKeyMapper.m */,
-				2109D3121E11A2DC003D2B67 /* JSONValueTransformer.h */,
-				2109D3131E11A2DC003D2B67 /* JSONValueTransformer.m */,
-			);
-			name = JSONModelTransformations;
-			path = jsonmodel/JSONModel/JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		211A9B501E112D4D00E689B0 /* Coordinator */ = {
@@ -490,7 +409,6 @@
 		218AEC4B1E0EF509005D1600 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				21E730E61E119FBF0069FDAB /* JSONModel */,
 				21E730E51E119FB80069FDAB /* AFNetworking */,
 				21E730DF1E1199FB0069FDAB /* ReactiveObjC */,
 				218AEC4C1E0EF511005D1600 /* IGListKit */,
@@ -623,17 +541,6 @@
 				21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */,
 			);
 			name = AFNetworking;
-			sourceTree = "<group>";
-		};
-		21E730E61E119FBF0069FDAB /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				2109D3001E11A2DC003D2B67 /* JSONModel */,
-				2109D3071E11A2DC003D2B67 /* JSONModelLib.h */,
-				2109D3081E11A2DC003D2B67 /* JSONModelNetworking */,
-				2109D30F1E11A2DC003D2B67 /* JSONModelTransformations */,
-			);
-			name = JSONModel;
 			sourceTree = "<group>";
 		};
 		21E730E81E119FC90069FDAB /* Products */ = {
@@ -954,16 +861,8 @@
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
 				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
-				2109D3271E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
-				2109D31E1E11A2DC003D2B67 /* JSONModelError.m in Sources */,
 				218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
-				2109D3241E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
-				2109D32A1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
-				2109D3181E11A2DC003D2B67 /* JSONModel.m in Sources */,
 				215C45F71E12D67A0057019D /* Network.m in Sources */,
-				2109D32D1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
-				2109D3211E11A2DC003D2B67 /* JSONAPI.m in Sources */,
-				2109D31B1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
 				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 				212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
@@ -973,17 +872,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2109D3251E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
-				2109D31F1E11A2DC003D2B67 /* JSONModelError.m in Sources */,
-				2109D31C1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
-				2109D3221E11A2DC003D2B67 /* JSONAPI.m in Sources */,
-				2109D32E1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
 				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
-				2109D32B1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
-				2109D3281E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
-				2109D3191E11A2DC003D2B67 /* JSONModel.m in Sources */,
 				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
 				215C45F81E12D67A0057019D /* Network.m in Sources */,
 				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
@@ -994,20 +885,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2109D31A1E11A2DC003D2B67 /* JSONModel.m in Sources */,
 				215C45F91E12D67A0057019D /* Network.m in Sources */,
-				2109D31D1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
 				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
-				2109D3201E11A2DC003D2B67 /* JSONModelError.m in Sources */,
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
-				2109D32C1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
 				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
-				2109D3291E11A2DC003D2B67 /* JSONModel+networking.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
-				2109D3231E11A2DC003D2B67 /* JSONAPI.m in Sources */,
-				2109D32F1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
-				2109D3261E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
