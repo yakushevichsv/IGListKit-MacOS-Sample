@@ -39,6 +39,9 @@
 		212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
+		215C45F71E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
+		215C45F81E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
+		215C45F91E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
 		217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
 		217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */; };
 		2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */; };
@@ -282,6 +285,9 @@
 		212806531E0FED4E0044D3D4 /* IGitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGitHubSearchRepositoryViewModel.h; path = ViewModels/IGitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
 		212806551E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryViewModel.h; path = ViewModels/GitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
 		212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryViewModel.m; path = ViewModels/GitHubSearchRepositoryViewModel.m; sourceTree = "<group>"; };
+		215C45F41E12D65B0057019D /* INetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INetwork.h; path = Models/Network/INetwork.h; sourceTree = "<group>"; };
+		215C45F51E12D67A0057019D /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = Models/Network/Network.h; sourceTree = "<group>"; };
+		215C45F61E12D67A0057019D /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Network.m; path = Models/Network/Network.m; sourceTree = "<group>"; };
 		217481951E0F319C00A05928 /* GitHubSearchRepositoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryItem.h; path = Views/GitHubSearchRepositoryItem.h; sourceTree = "<group>"; };
 		217481961E0F319C00A05928 /* GitHubSearchRepositoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryItem.m; path = Views/GitHubSearchRepositoryItem.m; sourceTree = "<group>"; };
 		217481971E0F319C00A05928 /* GitHubSearchRepositoryItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GitHubSearchRepositoryItem.xib; path = Views/GitHubSearchRepositoryItem.xib; sourceTree = "<group>"; };
@@ -423,6 +429,27 @@
 			name = Tetris;
 			sourceTree = "<group>";
 		};
+		215C45E11E12D5DD0057019D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				215C45F41E12D65B0057019D /* INetwork.h */,
+				215C45F51E12D67A0057019D /* Network.h */,
+				215C45F61E12D67A0057019D /* Network.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		215C45F31E12D5F00057019D /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				218AEC661E0F10A4005D1600 /* GitHubUser.h */,
+				218AEC671E0F10A4005D1600 /* GitHubUser.m */,
+				218AEC6B1E0F1BD8005D1600 /* GitHubRepository.h */,
+				218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */,
+			);
+			name = GitHub;
+			sourceTree = "<group>";
+		};
 		217481881E0F248400A05928 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,10 +522,8 @@
 		218AEC651E0F0FCC005D1600 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				218AEC661E0F10A4005D1600 /* GitHubUser.h */,
-				218AEC671E0F10A4005D1600 /* GitHubUser.m */,
-				218AEC6B1E0F1BD8005D1600 /* GitHubRepository.h */,
-				218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */,
+				215C45E11E12D5DD0057019D /* Network */,
+				215C45F31E12D5F00057019D /* GitHub */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -935,6 +960,7 @@
 				2109D3241E11A2DC003D2B67 /* JSONHTTPClient.m in Sources */,
 				2109D32A1E11A2DC003D2B67 /* JSONKeyMapper.m in Sources */,
 				2109D3181E11A2DC003D2B67 /* JSONModel.m in Sources */,
+				215C45F71E12D67A0057019D /* Network.m in Sources */,
 				2109D32D1E11A2DC003D2B67 /* JSONValueTransformer.m in Sources */,
 				2109D3211E11A2DC003D2B67 /* JSONAPI.m in Sources */,
 				2109D31B1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
@@ -959,6 +985,7 @@
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				2109D3191E11A2DC003D2B67 /* JSONModel.m in Sources */,
 				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
+				215C45F81E12D67A0057019D /* Network.m in Sources */,
 				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -968,6 +995,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2109D31A1E11A2DC003D2B67 /* JSONModel.m in Sources */,
+				215C45F91E12D67A0057019D /* Network.m in Sources */,
 				2109D31D1E11A2DC003D2B67 /* JSONModelClassProperty.m in Sources */,
 				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
 				2109D3201E11A2DC003D2B67 /* JSONModelError.m in Sources */,

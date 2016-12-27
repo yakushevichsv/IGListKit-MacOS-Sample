@@ -12,112 +12,80 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @interface GitHubSearchRepositoryVC()<NSCollectionViewDelegate, NSCollectionViewDataSource>
-{
-    id<IGitHubSearchRepositoryViewModel> _modelPrivate;
-}
-
-typedef NSArray<GitHubRepository *> RepoArray;
-
-@property (nonatomic,strong) RepoArray *repositories;
 @property (nonatomic, weak) IBOutlet NSSearchField *sfRepository;
 @property (nonatomic, weak) IBOutlet NSButton *btnSearch;
-@property (nonatomic) BOOL isSearching;
 @property (nonatomic, assign) IBOutlet NSCollectionView * _Nullable  cvRepository;
 
 @end
 
 @implementation GitHubSearchRepositoryVC
+@synthesize model = _model;
 
 - (void)setModel:(id<IGitHubSearchRepositoryViewModel>)model {
-    _modelPrivate = model;
-    //[self configure];
-}
-
-- (id<IGitHubSearchRepositoryViewModel>)model {
-    return _modelPrivate;
-}
-
-- (void)configure {
-    if ([self model] != nil && !self.isSearching) {
-        __weak typeof(self) wSelf = self;
-        self.isSearching = true;
-        NSLog(@"Searching Repo...");
-        NSString *query = @"Tetris";
-        [self.model searchRepositories:query startIndex:0 completion:^(RepoArray *repositories, NSError *error) {
-            NSLog(@"Finished Searching Repo is Error %@",error);
-            wSelf.isSearching = false;
-            if (error == nil && repositories.count != 0) {
-                
-                NSMutableArray<GitHubRepository *> *mArray = [NSMutableArray new];
-                
-                if (wSelf.repositories.count)
-                    [mArray addObjectsFromArray:wSelf.repositories];
-                [mArray addObjectsFromArray:repositories];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    wSelf.repositories = mArray;
-                    if (wSelf.isViewLoaded) {
-                        wSelf.sfRepository.stringValue = query;
-                        [wSelf.cvRepository reloadData];
-                    }
-                });
-            }
-            else {
-                //TODO: display item...
-            }
-        } cancel:^{
-            wSelf.isSearching = false;
-        }];
-    }
+    _model = model;
+    [self racSetup];
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self racSetup];
     [self setup];
 }
 
 - (void)racSetup {
+    
+    if (_model == nil || self.isViewLoaded == false) return ;
+    
     __weak typeof(self) wSelf = self;
     
-    //RAC(self.btnSearch, enabled) = [RACSignal ]
-    
-    [RACObserve(self, isSearching) subscribeNext:^(id  _Nullable x) {
+    NSParameterAssert(self.model != nil);
+    [self.model.isSearching subscribeNext:^(id  _Nullable x) {
         self.btnSearch.enabled = ![x boolValue];
     }];
     
     
-    [[[self.sfRepository.rac_textSignal doNext:^(NSString * _Nullable x) {
+    [[[[[[[self.sfRepository.rac_textSignal doNext:^(NSString * _Nullable x) {
         self.btnSearch.enabled = self.btnSearch.enabled && x.length;
-    }] skipUntilBlock:^BOOL(NSString * _Nullable x) {
-        return [x length] > 0 && !self.isSearching;
-    }] subscribeNext:^(NSString * _Nullable query) {
-        wSelf.isSearching = true;
-        wSelf.repositories = [NSArray new];
-        [wSelf.model searchRepositories:query startIndex:0 completion:^(RepoArray *repositories, NSError *error) {
-            NSLog(@"Finished Searching Repo is Error %@",error);
-            wSelf.isSearching = false;
-            if (error == nil && repositories.count != 0) {
-                
-                NSMutableArray<GitHubRepository *> *mArray = [NSMutableArray new];
-                
-                if (wSelf.repositories.count)
-                    [mArray addObjectsFromArray:wSelf.repositories];
-                [mArray addObjectsFromArray:repositories];
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    wSelf.repositories = mArray;
-                    if (wSelf.isViewLoaded) {
-                        [wSelf.cvRepository reloadData];
-                    }
-                });
-            }
-            else {
-                //TODO: display item...
-            }
-        } cancel:^{
-            wSelf.isSearching = false;
-        }];
+    }] throttle:0.5] distinctUntilChanged] filter:^BOOL(NSString * _Nullable value) {
+        return [value length] > 0;
+    }]
+       flattenMap:^__kindof RACSignal * _Nullable(NSString * _Nullable value) {
+        return [wSelf.model searchRepositories:value];
+    }] subscribeOn:[RACScheduler mainThreadScheduler] ]
+     subscribeNext:^(IGListIndexSetResult * result) {
+        
+         if (result.hasChanges)
+         [wSelf.cvRepository performBatchUpdates:^{
+             
+             //[wSelf.cvRepository insertItemsAtIndexPaths:result.inserts];
+             
+             [result.inserts enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                 [wSelf.cvRepository insertItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+             }];
+             
+             //[wSelf.cvRepository deleteItemsAtIndexPaths:result.deletes];
+             
+             [result.deletes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                 [wSelf.cvRepository deleteItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+             }];
+             
+             //[wSelf.cvRepository reloadItemsAtIndexPaths:result.updates];
+             
+             [result.updates enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                 [wSelf.cvRepository reloadItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+             }];
+             
+             [result.moves enumerateObjectsUsingBlock:^(IGListMoveIndex * _Nonnull move, NSUInteger idx, BOOL * _Nonnull stop) {
+                 [wSelf.cvRepository moveItemAtIndexPath:[NSIndexPath indexPathForItem:move.from inSection:0] toIndexPath:[NSIndexPath indexPathForItem:move.to inSection:0]];
+             }];
+         } completionHandler:^(BOOL finished) {
+             
+         }];
+         
+         
+    } error:^(NSError * _Nullable error) {
+        
+    } completed:^{
+        
     }];
 }
 
@@ -155,6 +123,7 @@ typedef NSArray<GitHubRepository *> RepoArray;
 
     // Do any additional setup after loading the view.
     //[self configure];
+    [self racSetup];
 }
 
 
@@ -170,14 +139,14 @@ typedef NSArray<GitHubRepository *> RepoArray;
 }
 
 - (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.repositories count];
+    return [self.model numberOfItems];
 }
 
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
     GitHubSearchRepositoryItem * item = [collectionView makeItemWithIdentifier:[[self class] collectionItemCellName]  forIndexPath:indexPath];
     
     //TODO: continue here...
-    [item setRepresentedObject:self.repositories[indexPath.item]];
+    [item setRepresentedObject:[self.model modelAtIndex:indexPath.item]];
     return item;
 }
 

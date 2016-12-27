@@ -9,12 +9,13 @@
 #import "Coordinator.h"
 #import "GitHubSearchRepositoryVC.h"
 #import "GitHubSearchRepositoryViewModel.h"
+#import "Network.h"
 
 @implementation Coordinator
 
 + (void)defineRootController:(NSWindowController *)controller {
     GitHubSearchRepositoryVC *vc = (GitHubSearchRepositoryVC *)controller.contentViewController;
-    vc.model =  [GitHubSearchRepositoryViewModel new];
+    vc.model =  [[GitHubSearchRepositoryViewModel alloc] initWithNetwork:[Network shared]];
 }
 
 @end

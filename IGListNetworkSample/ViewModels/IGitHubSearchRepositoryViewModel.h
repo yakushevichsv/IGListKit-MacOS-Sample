@@ -7,14 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-@class GitHubRepository;
+#import "INetwork.h"
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <IGListKit/IGListKit.h>
 
-typedef dispatch_block_t CancelBlock;
+@protocol ICollectionItemsDataSource <NSObject>
 
-@protocol IGitHubSearchRepositoryViewModel <NSObject>
+- (NSInteger)numberOfItems;
+- (GitHubRepository *)modelAtIndex:(NSInteger)index;
 
-typedef void (^GitHubSearchBlock)(NSArray<GitHubRepository *> *repositories, NSError *error);
-- (BOOL)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel;
-- (BOOL)cancelCurrentActiveSearch;
+@end
+
+@protocol IGitHubSearchRepository <ICollectionItemsDataSource>
+
+- (RACSignal *)searchRepositories:(NSString *)query;
+@property (nonatomic,readonly) RACSubject *isSearching;
+
+@end
+
+
+@protocol IGitHubSearchRepositoryViewModel <ICollectionItemsDataSource, IGitHubSearchRepository>
 
 @end

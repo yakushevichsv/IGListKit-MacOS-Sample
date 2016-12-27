@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IGitHubSearchRepositoryViewModel.h"
-
+#import "INetwork.h"
 @interface GitHubSearchRepositoryViewModel : NSObject<IGitHubSearchRepositoryViewModel>
-
+- (instancetype)initWithNetwork:(id<INetwork>)network;
 @end
