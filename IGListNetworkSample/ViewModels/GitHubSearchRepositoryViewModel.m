@@ -53,8 +53,8 @@ typedef NSArray<GitHubRepository *> RepoArray;
             NSMutableArray *mArray = [NSMutableArray new];
             NSArray *tempArray = [wSelf.repositories copy];
             
-            if (tempArray.count)
-                [mArray addObjectsFromArray:tempArray];
+            /*if (tempArray.count)
+                [mArray addObjectsFromArray:tempArray];*/
             [mArray addObjectsFromArray:repositories];
             
             IGListIndexSetResult *result = IGListDiff(tempArray, mArray , IGListDiffEquality);

@@ -52,7 +52,8 @@
     
     return sRepository.ID == self.ID &&
     [self.name isEqualToString:sRepository.name] &&
-    [self.fullName isEqualToString:sRepository.name];
+    [self.fullName isEqualToString:sRepository.name] &&
+    [self.owner isEqualToDiffableObject:sRepository.owner];
 }
 
 @end

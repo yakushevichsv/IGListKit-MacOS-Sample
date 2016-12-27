@@ -11,7 +11,6 @@
 #import <AFNetworking/AFNetworking.h>
 
 @interface Network()
-@property (nonatomic, strong) NSString *sQuery;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, strong) NSURLSessionDataTask *currentTask;
 @end
@@ -52,24 +51,15 @@ static Network *sNetwork = nil;
 #pragma mark - INetwork
 
 - (BOOL)cancelCurrentActiveSearch {
-    return [self cancelCurrentActiveSearch:true];
-}
-
-- (BOOL)cancelCurrentActiveSearch:(BOOL)erraseQuery {
     BOOL needCancellation = self.currentTask.state == NSURLSessionTaskStateRunning ||
     self.currentTask.state == NSURLSessionTaskStateSuspended;
     if (needCancellation)
         [self.currentTask cancel];
     self.currentTask = nil;
-    if (erraseQuery)
-        self.sQuery = nil;
     return needCancellation;
 }
 
 - (BOOL)searchRepositories:(NSString *)query startIndex:(NSInteger)index completion:(GitHubSearchBlock)completion cancel:(CancelBlock)cancel {
-    
-    if ([query isEqualToString:self.sQuery] && self.sQuery.length)
-        return false;
     
     [self cancelCurrentActiveSearch];
     
@@ -83,9 +73,8 @@ static Network *sNetwork = nil;
                                  @"page":@(pageNumber)};
     
     __weak typeof(self) wSelf = self;
-    self.sQuery = query;
     self.currentTask =  [self.manager GET:@"/search/repositories" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [wSelf cancelCurrentActiveSearch:false];
+        [wSelf cancelCurrentActiveSearch];
         NSDictionary *dic = (NSDictionary *)responseObject;
         NSLog(@"JSON response %@", dic);
         //TODO: use Mapper library....

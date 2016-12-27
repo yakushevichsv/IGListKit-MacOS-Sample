@@ -35,7 +35,8 @@
     
     return sUser.ID == self.ID &&
             [sUser.login isEqualToString:self.login] &&
-            [sUser.url isEqual:self.url];
+            [sUser.url isEqualTo:self.url] &&
+            [sUser.imageURL isEqualTo:self.imageURL];
 }
 
 @end

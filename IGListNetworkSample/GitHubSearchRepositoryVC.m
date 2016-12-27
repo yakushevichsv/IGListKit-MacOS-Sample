@@ -38,7 +38,8 @@
     __weak typeof(self) wSelf = self;
     
     NSParameterAssert(self.model != nil);
-    [self.model.isSearching subscribeNext:^(id  _Nullable x) {
+    [[self.model.isSearching subscribeOn:[RACScheduler mainThreadScheduler] ]
+     subscribeNext:^(id  _Nullable x) {
         self.btnSearch.enabled = ![x boolValue];
     }];
     
@@ -53,6 +54,8 @@
     }] subscribeOn:[RACScheduler mainThreadScheduler] ]
      subscribeNext:^(IGListIndexSetResult * result) {
         
+         NSLog(@"Results %@", [result debugDescription]);
+         
          if (result.hasChanges)
          [wSelf.cvRepository performBatchUpdates:^{
              
