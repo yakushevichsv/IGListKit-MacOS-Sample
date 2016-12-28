@@ -36,6 +36,14 @@
 		218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218C686B1E0EC44E00BA844E /* Main.storyboard */; };
 		218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68771E0EC44E00BA844E /* IGListNetworkSampleTests.m */; };
 		218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */; };
+		21A906031E141DD80057D4BD /* StatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A906021E141DD80057D4BD /* StatusBarView.m */; };
+		21A906041E141DD80057D4BD /* StatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A906021E141DD80057D4BD /* StatusBarView.m */; };
+		21B5B2D21E14363700CD0C7D /* NSMenu+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */; };
+		21B5B2D31E14363700CD0C7D /* NSMenu+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */; };
+		21B5B2D41E14363700CD0C7D /* NSMenu+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */; };
+		21B5B2D71E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */; };
+		21B5B2D81E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */; };
+		21B5B2D91E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */; };
 		21E730E21E119A530069FDAB /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E730D21E1199F10069FDAB /* ReactiveObjC.framework */; };
 		21E730E41E119AC50069FDAB /* ReactiveObjC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 21E730D21E1199F10069FDAB /* ReactiveObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E731051E119FE50069FDAB /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E730F61E119FC90069FDAB /* AFNetworking.framework */; };
@@ -272,6 +280,12 @@
 		218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListNetworkSampleUITests.m; sourceTree = "<group>"; };
 		218C68841E0EC44E00BA844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218C68901E0EC97000BA844E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		21A906011E141DD80057D4BD /* StatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBarView.h; path = Views/Controls/StatusBarView.h; sourceTree = "<group>"; };
+		21A906021E141DD80057D4BD /* StatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBarView.m; path = Views/Controls/StatusBarView.m; sourceTree = "<group>"; };
+		21B5B2D01E14363700CD0C7D /* NSMenu+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenu+Extensions.h"; path = "Categories/NSMenu+Extensions.h"; sourceTree = "<group>"; };
+		21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenu+Extensions.m"; path = "Categories/NSMenu+Extensions.m"; sourceTree = "<group>"; };
+		21B5B2D51E14364F00CD0C7D /* NSMenuItem+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenuItem+Extensions.h"; path = "Categories/NSMenuItem+Extensions.h"; sourceTree = "<group>"; };
+		21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenuItem+Extensions.m"; path = "Categories/NSMenuItem+Extensions.m"; sourceTree = "<group>"; };
 		21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveObjC.xcodeproj; path = ReactiveObjC/ReactiveObjC.xcodeproj; sourceTree = "<group>"; };
 		21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,7 +386,8 @@
 		217481881E0F248400A05928 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2174819C1E0F35A600A05928 /* GitHubSearchRepository */,
+				21A906001E141D9A0057D4BD /* VC */,
+				21A905EE1E141D8D0057D4BD /* Controls */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -472,6 +487,7 @@
 		218C685F1E0EC44E00BA844E /* IGListNetworkSample */ = {
 			isa = PBXGroup;
 			children = (
+				21B5B2BE1E14360100CD0C7D /* Categories */,
 				211A9B501E112D4D00E689B0 /* Coordinator */,
 				212806521E0FECE50044D3D4 /* ViewModels */,
 				218AEC651E0F0FCC005D1600 /* Models */,
@@ -511,6 +527,42 @@
 				218C68841E0EC44E00BA844E /* Info.plist */,
 			);
 			path = IGListNetworkSampleUITests;
+			sourceTree = "<group>";
+		};
+		21A905EE1E141D8D0057D4BD /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				21A906011E141DD80057D4BD /* StatusBarView.h */,
+				21A906021E141DD80057D4BD /* StatusBarView.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		21A906001E141D9A0057D4BD /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2174819C1E0F35A600A05928 /* GitHubSearchRepository */,
+			);
+			name = VC;
+			sourceTree = "<group>";
+		};
+		21B5B2BE1E14360100CD0C7D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				21B5B2DA1E14365400CD0C7D /* Menu&Item */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		21B5B2DA1E14365400CD0C7D /* Menu&Item */ = {
+			isa = PBXGroup;
+			children = (
+				21B5B2D01E14363700CD0C7D /* NSMenu+Extensions.h */,
+				21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */,
+				21B5B2D51E14364F00CD0C7D /* NSMenuItem+Extensions.h */,
+				21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */,
+			);
+			name = "Menu&Item";
 			sourceTree = "<group>";
 		};
 		21E730C31E1199F10069FDAB /* Products */ = {
@@ -858,6 +910,8 @@
 			files = (
 				218AEC681E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */,
+				21B5B2D71E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
+				21A906031E141DD80057D4BD /* StatusBarView.m in Sources */,
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
 				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
@@ -865,6 +919,7 @@
 				215C45F71E12D67A0057019D /* Network.m in Sources */,
 				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 				212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
+				21B5B2D21E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,10 +929,12 @@
 			files = (
 				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
+				21B5B2D81E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
 				215C45F81E12D67A0057019D /* Network.m in Sources */,
 				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
+				21B5B2D31E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +947,10 @@
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
+				21B5B2D41E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
+				21B5B2D91E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				21A906041E141DD80057D4BD /* StatusBarView.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,7 +1096,7 @@
 				);
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.IGListNetworkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1054,7 +1114,7 @@
 				);
 				INFOPLIST_FILE = IGListNetworkSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sy.IGListNetworkSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Coordinator.h"
+#import "NSMenuItem+Extensions.h"
+#import "NSMenu+Extensions.h"
 
 @interface AppDelegate ()
 
@@ -26,5 +28,8 @@
     // Insert code here to tear down your application
 }
 
+- (IBAction)mockShowStatusBar:(id)sender {
+    //
+}
 
 @end

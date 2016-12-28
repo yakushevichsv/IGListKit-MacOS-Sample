@@ -48,7 +48,7 @@ typedef NSArray<GitHubRepository *> RepoArray;
     BOOL scheduled = [self.network searchRepositories:query startIndex:0 completion:^(RepoArray *repositories, NSError *error) {
         NSLog(@"Finished Searching Repo is Error %@",error);
         
-        if (error == nil && repositories.count != 0) {
+        if (error == nil) {
             
             NSMutableArray *mArray = [NSMutableArray new];
             NSArray *tempArray = [wSelf.repositories copy];
@@ -66,8 +66,10 @@ typedef NSArray<GitHubRepository *> RepoArray;
             });
         }
         else {
-            [wSelf.isSearching sendNext:@(false)];
-            [signal sendError:error];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [wSelf.isSearching sendNext:@(false)];
+                [signal sendError:error];
+            });
         }
     } cancel:^{
         [self.isSearching sendNext:@(false)];
