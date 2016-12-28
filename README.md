@@ -10,10 +10,9 @@ It uses external libraries:
 
 ## Installation
 
-The app is installed using submodules.
-
+The app uses submodules.
 ``
-git clone git://github.com/foo/bar.git
+git clone https://github.com/yakushevichsv/IGListKit-MacOS-Sample.git
 cd bar
 git submodule update --init --recursive
 ``
@@ -21,6 +20,11 @@ git submodule update --init --recursive
 ## Notes
 
 Search on GitHub is performed in anonymous mode.
-...Authentification token is not used.
-...X-Rate-Limits are not supported yet.
-...Error Messages are not displayed(Just in console).
+
+1)Authentification token is not used.
+
+2)X-Rate-Limits are not supported yet.
+
+3)Error Messages are not displayed(Just in console).
+
+4)Just only first page of results is displayed. First 30 items( `per_page = 30 `)
