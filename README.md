@@ -13,7 +13,7 @@ It uses external libraries:
 The app uses submodules.
 ``
 git clone https://github.com/yakushevichsv/IGListKit-MacOS-Sample.git
-cd bar
+cd IGListKit-MacOS-Sample
 git submodule update --init --recursive
 ``
 
