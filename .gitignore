@@ -44,6 +44,6 @@ Carthage/
 ./ReactiveObjC/*
 *.xcbkptlist
 *.xcuserstate
-
+README.md
 
 
