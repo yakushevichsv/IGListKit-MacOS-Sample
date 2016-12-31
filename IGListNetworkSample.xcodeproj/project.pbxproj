@@ -36,6 +36,9 @@
 		218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218C686B1E0EC44E00BA844E /* Main.storyboard */; };
 		218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68771E0EC44E00BA844E /* IGListNetworkSampleTests.m */; };
 		218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */; };
+		219C7FD41E16BDF40000CAB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 218C68691E0EC44E00BA844E /* Assets.xcassets */; };
+		219C7FE91E16C02E0000CAB4 /* InitialWindowsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219C7FE81E16C02E0000CAB4 /* InitialWindowsController.m */; };
+		219C7FEA1E16C02E0000CAB4 /* InitialWindowsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 219C7FE81E16C02E0000CAB4 /* InitialWindowsController.m */; };
 		21A906031E141DD80057D4BD /* StatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A906021E141DD80057D4BD /* StatusBarView.m */; };
 		21A906041E141DD80057D4BD /* StatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A906021E141DD80057D4BD /* StatusBarView.m */; };
 		21B5B2D21E14363700CD0C7D /* NSMenu+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B5B2D11E14363700CD0C7D /* NSMenu+Extensions.m */; };
@@ -280,6 +283,8 @@
 		218C68821E0EC44E00BA844E /* IGListNetworkSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGListNetworkSampleUITests.m; sourceTree = "<group>"; };
 		218C68841E0EC44E00BA844E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		218C68901E0EC97000BA844E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		219C7FE71E16C02E0000CAB4 /* InitialWindowsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialWindowsController.h; path = Views/Window/InitialWindowsController.h; sourceTree = "<group>"; };
+		219C7FE81E16C02E0000CAB4 /* InitialWindowsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialWindowsController.m; path = Views/Window/InitialWindowsController.m; sourceTree = "<group>"; };
 		21A906011E141DD80057D4BD /* StatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusBarView.h; path = Views/Controls/StatusBarView.h; sourceTree = "<group>"; };
 		21A906021E141DD80057D4BD /* StatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusBarView.m; path = Views/Controls/StatusBarView.m; sourceTree = "<group>"; };
 		21B5B2D01E14363700CD0C7D /* NSMenu+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMenu+Extensions.h"; path = "Categories/NSMenu+Extensions.h"; sourceTree = "<group>"; };
@@ -529,6 +534,15 @@
 			path = IGListNetworkSampleUITests;
 			sourceTree = "<group>";
 		};
+		219C7FE61E16BFDA0000CAB4 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				219C7FE71E16C02E0000CAB4 /* InitialWindowsController.h */,
+				219C7FE81E16C02E0000CAB4 /* InitialWindowsController.m */,
+			);
+			name = Window;
+			sourceTree = "<group>";
+		};
 		21A905EE1E141D8D0057D4BD /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +555,7 @@
 		21A906001E141D9A0057D4BD /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				219C7FE61E16BFDA0000CAB4 /* Window */,
 				2174819C1E0F35A600A05928 /* GitHubSearchRepository */,
 			);
 			name = VC;
@@ -897,6 +912,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219C7FD41E16BDF40000CAB4 /* Assets.xcassets in Resources */,
 				2174819B1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +931,7 @@
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
 				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
+				219C7FE91E16C02E0000CAB4 /* InitialWindowsController.m in Sources */,
 				218AEC6D1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				215C45F71E12D67A0057019D /* Network.m in Sources */,
 				217481981E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
@@ -950,6 +967,7 @@
 				21B5B2D41E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
 				21B5B2D91E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
+				219C7FEA1E16C02E0000CAB4 /* InitialWindowsController.m in Sources */,
 				21A906041E141DD80057D4BD /* StatusBarView.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
 			);

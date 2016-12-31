@@ -1,18 +1,19 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2D26C6317FDC3D07ECFC855F8394F6BE55CD0D34",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2D26C6317FDC3D07ECFC855F8394F6BE55CD0D34" : 9223372036854775807,
     "E084C86B03F81D63323C9E7510697EA528A758C7" : 9223372036854775807,
-    "2454A7C0A4BC2A09472718EB55354F320600B245" : 9223372036854775807,
     "51B210D0D41486D3ADD6940D57E4480BBD4DE4C5" : 9223372036854775807,
     "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : 9223372036854775807,
     "8ACACE260A536BD5C08ED9BE3C91E53E9660173A" : 9223372036854775807
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E13E155C-7228-4CAA-84CE-6733BF07D4D6",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6AF3B780-0F84-41C5-9CF2-F94F9BEFB6F7",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2D26C6317FDC3D07ECFC855F8394F6BE55CD0D34" : "IGListNetworkSample\/",
     "E084C86B03F81D63323C9E7510697EA528A758C7" : "IGListNetworkSample\/ReactiveObjC\/Carthage\/Checkouts\/xcconfigs\/",
-    "2454A7C0A4BC2A09472718EB55354F320600B245" : "IGListNetworkSample\/jsonmodel\/",
     "51B210D0D41486D3ADD6940D57E4480BBD4DE4C5" : "IGListNetworkSample\/ReactiveObjC\/",
     "DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8" : "IGListNetworkSample\/AFNetworking\/",
     "8ACACE260A536BD5C08ED9BE3C91E53E9660173A" : "IGListNetworkSample\/IGListKit\/"
@@ -22,9 +23,9 @@
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "IGListNetworkSample.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jsonmodel\/jsonmodel.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yakushevichsv\/IGListKit-MacOS-Sample.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2454A7C0A4BC2A09472718EB55354F320600B245"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2D26C6317FDC3D07ECFC855F8394F6BE55CD0D34"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ReactiveCocoa\/ReactiveObjC.git",
