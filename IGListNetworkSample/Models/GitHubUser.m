@@ -40,3 +40,6 @@
 }
 
 @end
+
+@implementation AuthentificatedGitHubUser
+@end

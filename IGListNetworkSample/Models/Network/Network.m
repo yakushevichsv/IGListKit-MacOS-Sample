@@ -6,11 +6,14 @@
 //  Copyright © 2016 Siarhei Yakushevich. All rights reserved.
 //
 
-#import "Network.h"
-#import "GitHubRepository.h"
 #import <AFNetworking/AFNetworking.h>
 
+#import "Network.h"
+#import "GitHubRepository.h"
+#import "GitHubRateLimit.h"
+
 @interface Network()
+@property (nonatomic, strong, readwrite) NSURL *baseURL;
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
 @property (nonatomic, strong) NSURLSessionDataTask *currentTask;
 @end
@@ -18,6 +21,7 @@
 static Network *sNetwork = nil;
 
 @implementation Network
+@synthesize rateLimitBlock = _rateLimitBlock;
 
 + (instancetype)shared {
     static dispatch_once_t onceToken;
@@ -29,8 +33,8 @@ static Network *sNetwork = nil;
 
 - (instancetype)initPrivate {
     if (self = [super init]) {
-        NSURL *baseURL = [NSURL URLWithString:@"https://api.github.com"];
-        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
+        self.baseURL = [NSURL URLWithString:@"https://api.github.com"];
+        self.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:self.baseURL];
         self.manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
         
         dispatch_queue_t queue;
@@ -49,6 +53,23 @@ static Network *sNetwork = nil;
 }
 
 #pragma mark - INetwork
+
+- (void)accessRateLimits:(RateLimitsBlock)completion {
+    [self.manager GET:@"/rate_limit" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *dic = (NSDictionary *)responseObject;
+        NSParameterAssert([dic isKindOfClass:[NSDictionary class]]);
+        
+        NSDictionary *core = (NSDictionary *)[dic valueForKeyPath: @"resources.core"];
+        GitHubRateLimit* coreLimit = [[GitHubRateLimit alloc] initWithDictionary:core];
+        
+        NSDictionary *search = (NSDictionary *)[dic valueForKeyPath: @"resources.search"];
+        GitHubRateLimit* searchLimit = [[GitHubRateLimit alloc] initWithDictionary:search];
+        
+        completion(searchLimit, coreLimit, nil);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        completion(nil, nil, error);
+    }];
+}
 
 - (BOOL)cancelCurrentActiveSearch {
     BOOL needCancellation = self.currentTask.state == NSURLSessionTaskStateRunning ||
@@ -106,8 +127,16 @@ static Network *sNetwork = nil;
         NSLog(@"Error %@", [error debugDescription]);
         if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorCancelled)
             cancel();
-        else
+        else {
+            NSHTTPURLResponse *response = (NSHTTPURLResponse *) error.userInfo[@"com.alamofire.serialization.response.error.response"];
+            if (response.statusCode == 403) {
+                GitHubRateLimit *limit = [GitHubRateLimit createRateLimitFromGitHubAPIDictionary:response.allHeaderFields];
+                wSelf.rateLimitBlock(limit);
+            }
+            else
+            //wSelf.rateLimitBlock(nil);
             completion(nil,error);
+        }
     }];
     NSParameterAssert(self.currentTask.state == NSURLSessionTaskStateRunning);
     return true;

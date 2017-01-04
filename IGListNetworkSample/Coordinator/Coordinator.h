@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
+@class InitialWindowsController;
 @interface Coordinator : NSObject
 
-+ (void)defineRootController:(NSWindowController * _Nullable)controller;
++ (void)defineRootController:(InitialWindowsController * _Nullable)controller;
 
 @end

@@ -20,7 +20,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     NSApplication *sApp = [NSApplication sharedApplication];
-    [Coordinator defineRootController:(sApp.mainWindow ?: sApp.windows.firstObject).windowController];
+    
+    InitialWindowsController *iVC = (InitialWindowsController *) ((sApp.mainWindow ?: sApp.windows.firstObject).windowController);
+    
+    [Coordinator defineRootController:iVC];
 }
 
 

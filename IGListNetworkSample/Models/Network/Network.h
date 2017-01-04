@@ -12,7 +12,6 @@
 @interface Network : NSObject<INetwork>
 
 + (instancetype)shared;
-
 - (instancetype) __unavailable init;
 
 @end

@@ -15,6 +15,18 @@
 		212806571E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
 		212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */; };
+		212B5FAF1E1BD17300033BCA /* GitHubAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FAE1E1BD17300033BCA /* GitHubAPI.m */; };
+		212B5FB01E1BD17300033BCA /* GitHubAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FAE1E1BD17300033BCA /* GitHubAPI.m */; };
+		212B5FB11E1BD17300033BCA /* GitHubAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FAE1E1BD17300033BCA /* GitHubAPI.m */; };
+		212B5FB51E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FB41E1BD36600033BCA /* InitialWindowsViewModel.m */; };
+		212B5FB61E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FB41E1BD36600033BCA /* InitialWindowsViewModel.m */; };
+		212B5FB71E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FB41E1BD36600033BCA /* InitialWindowsViewModel.m */; };
+		212B5FBB1E1BF44B00033BCA /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FBA1E1BF44B00033BCA /* Settings.m */; };
+		212B5FBC1E1BF44B00033BCA /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FBA1E1BF44B00033BCA /* Settings.m */; };
+		212B5FBD1E1BF44B00033BCA /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FBA1E1BF44B00033BCA /* Settings.m */; };
+		212B5FC11E1C253000033BCA /* GitHubRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FC01E1C253000033BCA /* GitHubRateLimit.m */; };
+		212B5FC21E1C253000033BCA /* GitHubRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FC01E1C253000033BCA /* GitHubRateLimit.m */; };
+		212B5FC31E1C253000033BCA /* GitHubRateLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 212B5FC01E1C253000033BCA /* GitHubRateLimit.m */; };
 		215C45F71E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
 		215C45F81E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
 		215C45F91E12D67A0057019D /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C45F61E12D67A0057019D /* Network.m */; };
@@ -255,6 +267,17 @@
 		212806531E0FED4E0044D3D4 /* IGitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGitHubSearchRepositoryViewModel.h; path = ViewModels/IGitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
 		212806551E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubSearchRepositoryViewModel.h; path = ViewModels/GitHubSearchRepositoryViewModel.h; sourceTree = "<group>"; };
 		212806561E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubSearchRepositoryViewModel.m; path = ViewModels/GitHubSearchRepositoryViewModel.m; sourceTree = "<group>"; };
+		212B5FAC1E1BD13E00033BCA /* IGitHubAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IGitHubAPI.h; path = Models/API/IGitHubAPI.h; sourceTree = "<group>"; };
+		212B5FAD1E1BD17300033BCA /* GitHubAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubAPI.h; path = Models/API/GitHubAPI.h; sourceTree = "<group>"; };
+		212B5FAE1E1BD17300033BCA /* GitHubAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubAPI.m; path = Models/API/GitHubAPI.m; sourceTree = "<group>"; };
+		212B5FB21E1BD34600033BCA /* IInitialWindowsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IInitialWindowsViewModel.h; path = ViewModels/InitialWindowsVM/IInitialWindowsViewModel.h; sourceTree = "<group>"; };
+		212B5FB31E1BD36600033BCA /* InitialWindowsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InitialWindowsViewModel.h; path = ViewModels/InitialWindowsVM/InitialWindowsViewModel.h; sourceTree = "<group>"; };
+		212B5FB41E1BD36600033BCA /* InitialWindowsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitialWindowsViewModel.m; path = ViewModels/InitialWindowsVM/InitialWindowsViewModel.m; sourceTree = "<group>"; };
+		212B5FB91E1BF44B00033BCA /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Models/Settings/Settings.h; sourceTree = "<group>"; };
+		212B5FBA1E1BF44B00033BCA /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Models/Settings/Settings.m; sourceTree = "<group>"; };
+		212B5FBE1E1BF46300033BCA /* ISettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISettings.h; path = Models/Settings/ISettings.h; sourceTree = "<group>"; };
+		212B5FBF1E1C253000033BCA /* GitHubRateLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GitHubRateLimit.h; path = Models/API/GitHubRateLimit.h; sourceTree = "<group>"; };
+		212B5FC01E1C253000033BCA /* GitHubRateLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GitHubRateLimit.m; path = Models/API/GitHubRateLimit.m; sourceTree = "<group>"; };
 		215C45F41E12D65B0057019D /* INetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = INetwork.h; path = Models/Network/INetwork.h; sourceTree = "<group>"; };
 		215C45F51E12D67A0057019D /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Network.h; path = Models/Network/Network.h; sourceTree = "<group>"; };
 		215C45F61E12D67A0057019D /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Network.m; path = Models/Network/Network.m; sourceTree = "<group>"; };
@@ -344,6 +367,7 @@
 		212806521E0FECE50044D3D4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				212B5F991E1BCDD300033BCA /* InitialWindowsVM */,
 				212806541E0FED5C0044D3D4 /* GitHubSearchRepositoryVM */,
 			);
 			name = ViewModels;
@@ -367,6 +391,36 @@
 			name = Tetris;
 			sourceTree = "<group>";
 		};
+		212B5F991E1BCDD300033BCA /* InitialWindowsVM */ = {
+			isa = PBXGroup;
+			children = (
+				212B5FB21E1BD34600033BCA /* IInitialWindowsViewModel.h */,
+				212B5FB31E1BD36600033BCA /* InitialWindowsViewModel.h */,
+				212B5FB41E1BD36600033BCA /* InitialWindowsViewModel.m */,
+			);
+			name = InitialWindowsVM;
+			sourceTree = "<group>";
+		};
+		212B5FAB1E1BCF4D00033BCA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				212B5FAC1E1BD13E00033BCA /* IGitHubAPI.h */,
+				212B5FAD1E1BD17300033BCA /* GitHubAPI.h */,
+				212B5FAE1E1BD17300033BCA /* GitHubAPI.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		212B5FB81E1BF42A00033BCA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				212B5FBE1E1BF46300033BCA /* ISettings.h */,
+				212B5FB91E1BF44B00033BCA /* Settings.h */,
+				212B5FBA1E1BF44B00033BCA /* Settings.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		215C45E11E12D5DD0057019D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,10 +434,13 @@
 		215C45F31E12D5F00057019D /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				212B5FAB1E1BCF4D00033BCA /* API */,
 				218AEC661E0F10A4005D1600 /* GitHubUser.h */,
 				218AEC671E0F10A4005D1600 /* GitHubUser.m */,
 				218AEC6B1E0F1BD8005D1600 /* GitHubRepository.h */,
 				218AEC6C1E0F1BD8005D1600 /* GitHubRepository.m */,
+				212B5FBF1E1C253000033BCA /* GitHubRateLimit.h */,
+				212B5FC01E1C253000033BCA /* GitHubRateLimit.m */,
 			);
 			name = GitHub;
 			sourceTree = "<group>";
@@ -460,6 +517,7 @@
 		218AEC651E0F0FCC005D1600 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				212B5FB81E1BF42A00033BCA /* Settings */,
 				215C45E11E12D5DD0057019D /* Network */,
 				215C45F31E12D5F00057019D /* GitHub */,
 			);
@@ -924,10 +982,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				212B5FC11E1C253000033BCA /* GitHubRateLimit.m in Sources */,
 				218AEC681E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */,
 				21B5B2D71E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
+				212B5FB51E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */,
+				212B5FAF1E1BD17300033BCA /* GitHubAPI.m in Sources */,
 				21A906031E141DD80057D4BD /* StatusBarView.m in Sources */,
+				212B5FBB1E1BF44B00033BCA /* Settings.m in Sources */,
 				218C68651E0EC44E00BA844E /* main.m in Sources */,
 				218C68621E0EC44E00BA844E /* AppDelegate.m in Sources */,
 				211A9B581E112F5000E689B0 /* Coordinator.m in Sources */,
@@ -947,11 +1009,15 @@
 				218AEC691E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68781E0EC44E00BA844E /* IGListNetworkSampleTests.m in Sources */,
 				21B5B2D81E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
+				212B5FBC1E1BF44B00033BCA /* Settings.m in Sources */,
+				212B5FB61E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */,
 				218AEC6E1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				211A9B591E112F5000E689B0 /* Coordinator.m in Sources */,
 				215C45F81E12D67A0057019D /* Network.m in Sources */,
 				212806581E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
 				21B5B2D31E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
+				212B5FC21E1C253000033BCA /* GitHubRateLimit.m in Sources */,
+				212B5FB01E1BD17300033BCA /* GitHubAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -963,13 +1029,17 @@
 				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
+				212B5FB71E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
+				212B5FBD1E1BF44B00033BCA /* Settings.m in Sources */,
+				212B5FC31E1C253000033BCA /* GitHubRateLimit.m in Sources */,
 				21B5B2D41E14363700CD0C7D /* NSMenu+Extensions.m in Sources */,
 				21B5B2D91E14364F00CD0C7D /* NSMenuItem+Extensions.m in Sources */,
 				218AEC6F1E0F1BD8005D1600 /* GitHubRepository.m in Sources */,
 				219C7FEA1E16C02E0000CAB4 /* InitialWindowsController.m in Sources */,
 				21A906041E141DD80057D4BD /* StatusBarView.m in Sources */,
 				217481991E0F319C00A05928 /* GitHubSearchRepositoryItem.m in Sources */,
+				212B5FB11E1BD17300033BCA /* GitHubAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

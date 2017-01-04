@@ -7,7 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "IInitialWindowsViewModel.h"
 
 @interface InitialWindowsController : NSWindowController
+
+@property (nonatomic, strong) id<IInitialWindowsViewModel> model;
 
 @end

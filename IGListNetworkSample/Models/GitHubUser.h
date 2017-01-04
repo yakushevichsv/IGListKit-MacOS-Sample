@@ -10,9 +10,11 @@
 #import <IGListKit/IGListKit.h>
 
 @protocol IDictionaryLiteralConvertible <NSObject>
+- (instancetype _Nonnull)initWithDictionary:(NSDictionary* _Nonnull)dic;
+@end
 
-- (instancetype _Nonnull)initWithDictionary:(NSDictionary * _Nonnull)dic;
-
+@protocol IDictionaryRepresentable <NSObject>
+- (NSDictionary* _Nonnull)convertToDictionary;
 @end
 
 @interface GitHubUser : NSObject<IGListDiffable, IDictionaryLiteralConvertible>
@@ -24,3 +26,7 @@
 
 @end
 
+
+@interface AuthentificatedGitHubUser: GitHubUser
+@property (nonatomic) NSString * _Nullable token;
+@end
