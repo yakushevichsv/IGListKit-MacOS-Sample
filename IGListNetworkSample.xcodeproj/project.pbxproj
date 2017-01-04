@@ -64,6 +64,10 @@
 		21E731051E119FE50069FDAB /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E730F61E119FC90069FDAB /* AFNetworking.framework */; };
 		21E7310C1E11A0600069FDAB /* AFNetworking.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 21E730F61E119FC90069FDAB /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		21E7310D1E11A0E20069FDAB /* IGListKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 218AEC5F1E0EF550005D1600 /* IGListKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		21F855F61E1D1F5900A4132A /* GItHubAPIStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F855F41E1D1F5900A4132A /* GItHubAPIStateVC.m */; };
+		21F855F71E1D1F5900A4132A /* GItHubAPIStateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F855F41E1D1F5900A4132A /* GItHubAPIStateVC.m */; };
+		21F855F81E1D1F5900A4132A /* GItHubAPIStateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F855F51E1D1F5900A4132A /* GItHubAPIStateVC.xib */; };
+		21F855F91E1D1F5900A4132A /* GItHubAPIStateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F855F51E1D1F5900A4132A /* GItHubAPIStateVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -316,6 +320,9 @@
 		21B5B2D61E14364F00CD0C7D /* NSMenuItem+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMenuItem+Extensions.m"; path = "Categories/NSMenuItem+Extensions.m"; sourceTree = "<group>"; };
 		21E730C21E1199F10069FDAB /* ReactiveObjC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactiveObjC.xcodeproj; path = ReactiveObjC/ReactiveObjC.xcodeproj; sourceTree = "<group>"; };
 		21E730E71E119FC90069FDAB /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = AFNetworking/AFNetworking.xcodeproj; sourceTree = "<group>"; };
+		21F855F31E1D1F5900A4132A /* GItHubAPIStateVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GItHubAPIStateVC.h; path = Views/GitHubAPIStateVC/GItHubAPIStateVC.h; sourceTree = "<group>"; };
+		21F855F41E1D1F5900A4132A /* GItHubAPIStateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GItHubAPIStateVC.m; path = Views/GitHubAPIStateVC/GItHubAPIStateVC.m; sourceTree = "<group>"; };
+		21F855F51E1D1F5900A4132A /* GItHubAPIStateVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GItHubAPIStateVC.xib; path = Views/GitHubAPIStateVC/GItHubAPIStateVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -613,6 +620,7 @@
 		21A906001E141D9A0057D4BD /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				21F855E11E1D1D2500A4132A /* GItHubAPIStateVC */,
 				219C7FE61E16BFDA0000CAB4 /* Window */,
 				2174819C1E0F35A600A05928 /* GitHubSearchRepository */,
 			);
@@ -680,6 +688,16 @@
 				21E730FE1E119FC90069FDAB /* AFNetworking tvOS Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		21F855E11E1D1D2500A4132A /* GItHubAPIStateVC */ = {
+			isa = PBXGroup;
+			children = (
+				21F855F31E1D1F5900A4132A /* GItHubAPIStateVC.h */,
+				21F855F41E1D1F5900A4132A /* GItHubAPIStateVC.m */,
+				21F855F51E1D1F5900A4132A /* GItHubAPIStateVC.xib */,
+			);
+			name = GItHubAPIStateVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -952,6 +970,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F855F81E1D1F5900A4132A /* GItHubAPIStateVC.xib in Resources */,
 				218C686A1E0EC44E00BA844E /* Assets.xcassets in Resources */,
 				218C686D1E0EC44E00BA844E /* Main.storyboard in Resources */,
 				2174819A1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
@@ -972,6 +991,7 @@
 			files = (
 				219C7FD41E16BDF40000CAB4 /* Assets.xcassets in Resources */,
 				2174819B1E0F319C00A05928 /* GitHubSearchRepositoryItem.xib in Resources */,
+				21F855F91E1D1F5900A4132A /* GItHubAPIStateVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +1002,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F855F61E1D1F5900A4132A /* GItHubAPIStateVC.m in Sources */,
 				212B5FC11E1C253000033BCA /* GitHubRateLimit.m in Sources */,
 				218AEC681E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				218C68681E0EC44E00BA844E /* GitHubSearchRepositoryVC.m in Sources */,
@@ -1029,6 +1050,7 @@
 				211A9B5A1E112F5000E689B0 /* Coordinator.m in Sources */,
 				218AEC6A1E0F10A4005D1600 /* GitHubUser.m in Sources */,
 				212806591E0FEDA40044D3D4 /* GitHubSearchRepositoryViewModel.m in Sources */,
+				21F855F71E1D1F5900A4132A /* GItHubAPIStateVC.m in Sources */,
 				212B5FB71E1BD36600033BCA /* InitialWindowsViewModel.m in Sources */,
 				218C68831E0EC44E00BA844E /* IGListNetworkSampleUITests.m in Sources */,
 				212B5FBD1E1BF44B00033BCA /* Settings.m in Sources */,

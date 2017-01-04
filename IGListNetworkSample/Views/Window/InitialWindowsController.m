@@ -9,12 +9,14 @@
 #import "InitialWindowsController.h"
 #import <AFNetworking/AFNetworking.h>
 #import "GitHubRateLimit.h"
+#import "GItHubAPIStateVC.h"
 
 @interface InitialWindowsController ()<NSToolbarDelegate> {
     id<IInitialWindowsViewModel>  _model;
 }
 @property (nonatomic, strong) NSTimer *remainingTimer;
 @property (nonatomic) NSUInteger remainingCount;
+@property (nonatomic, strong) NSPopover *popover;
 
 @end
 
@@ -127,6 +129,7 @@ static NSString *kWarning = @"warning";
     NSToolbar *toolBar = [[NSToolbar alloc] initWithIdentifier:kToolbarIdentifier];
     toolBar.displayMode = NSToolbarDisplayModeIconAndLabel;
     toolBar.allowsUserCustomization = YES;
+    toolBar.sizeMode = NSToolbarSizeModeSmall;
     toolBar.delegate = self;
     self.window.toolbar = toolBar;
 }
@@ -150,6 +153,7 @@ static NSString *kWarning = @"warning";
         imageName = kError;
         //item.image = [NSImage imageNamed:kError];
     //item.image = [NSImage imageNamed:];
+    //NSButton *btn = (NSButton *)item.view;
     item.image = imageName.length != 0 ? [NSImage imageNamed:imageName] : nil;
 }
 
@@ -202,6 +206,11 @@ static NSString *kWarning = @"warning";
     //TODO: configure here some delegate....
     if ([itemIdentifier isEqualToString:kAPIStateIdentifier]) {
         NSToolbarItem *item = [[NSToolbarItem alloc]initWithItemIdentifier:itemIdentifier];
+        //NSButton *btn = [NSButton buttonWithTitle:@"" target:self action:@selector(toggleGitHubAPIState)];
+        //item.view = btn;
+        //btn.imageScaling = NSImageScaleProportionallyUpOrDown;
+        item.target = self;
+        item.action = @selector(toggleGitHubAPIState:);
         [self configure:item withRateLimit:[self.model getSearchRateLimit]];
         item.toolTip = NSLocalizedString(@"GitHub API state", @"");
         item.label = NSLocalizedString(@"GitHub API", @"");
@@ -212,6 +221,36 @@ static NSString *kWarning = @"warning";
 }
 
 #pragma mark - Actions
+
+- (void)toggleGitHubAPIState :(NSToolbarItem *)item {
+    NSLog(@"Toggle state");
+    
+    if (self.popover.isShown)
+        [self closePopover];
+    else {
+        if (self.popover == nil) {
+            self.popover = [NSPopover new];
+            GItHubAPIStateVC* vc = [[GItHubAPIStateVC alloc] initWithNibName:@"GItHubAPIStateVC" bundle:[NSBundle mainBundle]];
+            self.popover.contentViewController = vc;
+            //self.popover.contentViewController = [
+        }
+        
+        
+        //TODO: correct here...
+        NSSize size = self.popover.contentViewController.view.bounds.size;
+        
+        //NSRect rect = NSMakeRect(xPos, yPos, size.width, size.height);
+        
+        NSRect frame = self.window.frame;
+        NSRect conent = self.window.contentLayoutRect;
+        
+        [self.popover showRelativeToRect:conent ofView:self.window.contentView preferredEdge:NSRectEdgeMinY];
+    }
+}
+
+- (void)closePopover {
+    [self.popover performClose:nil];
+}
 
 - (void)connectStatePressed:(NSButton *)sender {
     
