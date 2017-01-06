@@ -39,9 +39,12 @@
             if (error != nil || coreLimit.remaining == 0) {
                 NSLog(@"Search %@", searchLimit);
                 NSLog(@"Core %@", coreLimit);
+                wSelf.oSearchLimit = [wSelf.settings originalSearchRateLimit];
+                [wSelf.settings setSearchRateLimit:wSelf.oSearchLimit];
             }
-            else {
+            else if (searchLimit) {
                 [wSelf.settings setSearchRateLimit:searchLimit];
+                [wSelf.settings setOriginalSearchRateLimit:searchLimit];
                 wSelf.oSearchLimit = searchLimit;
             }
         }];

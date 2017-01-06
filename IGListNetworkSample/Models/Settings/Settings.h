@@ -10,5 +10,4 @@
 #import "ISettings.h"
 
 @interface Settings : NSObject<ISettings>
-
 @end

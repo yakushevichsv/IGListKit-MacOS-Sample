@@ -8,6 +8,7 @@
 
 #import "InitialWindowsController.h"
 #import <AFNetworking/AFNetworking.h>
+#import "EventMonitor.h"
 #import "GitHubRateLimit.h"
 #import "GItHubAPIStateVC.h"
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) NSTimer *remainingTimer;
 @property (nonatomic) NSUInteger remainingCount;
 @property (nonatomic, strong) NSPopover *popover;
+@property (nonatomic, strong) EventMonitor *monitor;
 
 @end
 
@@ -225,11 +227,24 @@ static NSString *kWarning = @"warning";
 - (void)toggleGitHubAPIState :(NSToolbarItem *)item {
     NSLog(@"Toggle state");
     
-    if (self.popover.isShown)
+    if (self.popover.isShown) {
         [self closePopover];
-    else {
-        if (self.popover == nil)
+        [self.monitor stop];
+    } else {
+        if (self.popover == nil) {
             self.popover = [NSPopover new];
+            self.monitor = [[EventMonitor alloc] initWithMask:NSEventMaskLeftMouseDown | NSEventMaskRightMouseDown handler:^NSEvent *(NSEvent *event) {
+                //NSLog(@"Event %@", [event debugDescription]);
+                //NSSet<NSTouch *> *set = [event allTouches];
+                //NSLog(@"Set %@",set);
+                if (self.popover.isShown) {
+                    [self closePopover];
+                    [self.monitor stop];
+                }
+                return event;
+            }];
+        }
+        [self.monitor start];
         
         GItHubAPIStateVC* vc = [[GItHubAPIStateVC alloc] initWithNibName:@"GItHubAPIStateVC" bundle:[NSBundle mainBundle]];
         self.popover.contentViewController = vc;

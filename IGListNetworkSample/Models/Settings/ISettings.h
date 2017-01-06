@@ -12,6 +12,6 @@
 @protocol ISettings <NSObject>
 
 @property (nonatomic, strong) AuthentificatedGitHubUser *authentificatedUser;
-@property (nonatomic, strong) GitHubRateLimit * searchRateLimit;
-
+@property (nonatomic, strong) GitHubRateLimit *searchRateLimit;
+@property (nonatomic, strong) GitHubRateLimit *originalSearchRateLimit;
 @end

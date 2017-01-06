@@ -12,6 +12,7 @@
 
 static NSString *kUser = @"UserKey";
 static NSString *kSearchRateLimit = @"SearchRateLimitKey";
+static NSString *kOrigSearchRateLimit = @"OriginalSearchRateLimiKey";
 
 @implementation Settings
 
@@ -48,6 +49,20 @@ static NSString *kSearchRateLimit = @"SearchRateLimitKey";
 
 - (GitHubRateLimit *)searchRateLimit {
    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kSearchRateLimit];
+    return [[GitHubRateLimit alloc] initWithDictionary:dic];
+}
+
+- (void)setOriginalSearchRateLimit:(GitHubRateLimit *)originalSearchRateLimit {
+    if (originalSearchRateLimit)
+        [self setSearchRateLimitFromDic:[originalSearchRateLimit convertToDictionary]];
+    else
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kOrigSearchRateLimit];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (GitHubRateLimit *)originalSearchRateLimit {
+    NSDictionary *dic = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kOrigSearchRateLimit];
     return [[GitHubRateLimit alloc] initWithDictionary:dic];
 }
 
