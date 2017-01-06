@@ -23,10 +23,13 @@
     GitHubAPI *api = [[GitHubAPI alloc] initWithNetwork: network];
     Settings *settings = [Settings new];
     
-    controller.model = [[InitialWindowsViewModel alloc] initWithGitHubAPI:api
+    InitialWindowsViewModel *iModel= [[InitialWindowsViewModel alloc] initWithGitHubAPI:api
                                                                   network:network
                                                                  settings:settings];
-    vc.model =  [[GitHubSearchRepositoryViewModel alloc] initWithNetwork:[Network shared]];
+    GitHubSearchRepositoryViewModel * searchModel =  [[GitHubSearchRepositoryViewModel alloc] initWithNetwork:[Network shared]];
+    vc.model = searchModel;
+    searchModel.delegate = iModel;
+    controller.model = iModel;
 }
 
 @end

@@ -11,6 +11,8 @@
 #import "Network.h"
 #import "GitHubRepository.h"
 #import "GitHubRateLimit.h"
+#import "GitHubSearchInfo.h"
+#import "GitHubSearchError.h"
 
 @interface Network()
 @property (nonatomic, strong, readwrite) NSURL *baseURL;
@@ -21,7 +23,6 @@
 static Network *sNetwork = nil;
 
 @implementation Network
-@synthesize rateLimitBlock = _rateLimitBlock;
 
 + (instancetype)shared {
     static dispatch_once_t onceToken;
@@ -117,7 +118,13 @@ static Network *sNetwork = nil;
                 [resArray addObject:repo];
             }];
             
-            completion([resArray copy],nil);
+            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+            
+            GitHubSearchInfo *info = [[GitHubSearchInfo alloc] initWithDictionary:httpResponse.allHeaderFields];
+            
+            info.repositories = [resArray copy];
+            
+            completion(info ,nil);
         }
         else
             completion(nil,nil);
@@ -129,16 +136,18 @@ static Network *sNetwork = nil;
             cancel();
         else {
             NSHTTPURLResponse *response = (NSHTTPURLResponse *) error.userInfo[@"com.alamofire.serialization.response.error.response"];
+            NSError *cusError = error;
             if (response.statusCode == 403) {
                 GitHubRateLimit *limit = [GitHubRateLimit createRateLimitFromGitHubAPIDictionary:response.allHeaderFields];
-                wSelf.rateLimitBlock(limit);
+                GitHubSearchError *gitError = [GitHubSearchError errorWithDomain:cusError.domain code:cusError.code userInfo:cusError.userInfo];
+                gitError.rateLimit = limit;
+                cusError = gitError;
             }
-            else
-            //wSelf.rateLimitBlock(nil);
-            completion(nil,error);
+            completion(nil,cusError);
         }
     }];
     NSParameterAssert(self.currentTask.state == NSURLSessionTaskStateRunning);
+    
     return true;
 }
 

@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSInteger limit;
 @property (nonatomic, readonly) NSInteger remaining;
 @property (nonatomic, readonly) NSDate *resetDate;
+@property (nonatomic, readonly) NSInteger resetDiff;
 
 - (BOOL)restoreExpiredLimitsOnNeed;
 - (BOOL)hasExpired;

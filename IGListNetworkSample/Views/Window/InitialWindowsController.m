@@ -85,6 +85,8 @@ static NSString *kWarning = @"warning";
                 *stop = YES;
             }
         }];
+        
+            [sSelf definePopoverLimits:limit];
         });
     }];
     
@@ -94,7 +96,6 @@ static NSString *kWarning = @"warning";
             *stop = YES;
         }
     }];
-
 }
 
 - (void)timerFired {
@@ -104,7 +105,9 @@ static NSString *kWarning = @"warning";
     [self disposeTimerOnNeed: !self.remainingCount];
     [self.window.toolbar.items enumerateObjectsUsingBlock:^(__kindof NSToolbarItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj.itemIdentifier isEqualToString:kAPIStateIdentifier]){
-            [self configure:obj withRateLimit:[self.model getSearchRateLimit]];
+            GitHubRateLimit *limit = self.remainingCount != 0 ? [self.model getSearchRateLimit] : [self.model getOriginalSearchRateLimit];
+            [self definePopoverLimits:limit];
+            [self configure:obj withRateLimit:limit];
             *stop = YES;
         }
     }];}
@@ -206,9 +209,6 @@ static NSString *kWarning = @"warning";
     //TODO: configure here some delegate....
     if ([itemIdentifier isEqualToString:kAPIStateIdentifier]) {
         NSToolbarItem *item = [[NSToolbarItem alloc]initWithItemIdentifier:itemIdentifier];
-        //NSButton *btn = [NSButton buttonWithTitle:@"" target:self action:@selector(toggleGitHubAPIState)];
-        //item.view = btn;
-        //btn.imageScaling = NSImageScaleProportionallyUpOrDown;
         item.target = self;
         item.action = @selector(toggleGitHubAPIState:);
         [self configure:item withRateLimit:[self.model getSearchRateLimit]];
@@ -228,23 +228,32 @@ static NSString *kWarning = @"warning";
     if (self.popover.isShown)
         [self closePopover];
     else {
-        if (self.popover == nil) {
+        if (self.popover == nil)
             self.popover = [NSPopover new];
-            GItHubAPIStateVC* vc = [[GItHubAPIStateVC alloc] initWithNibName:@"GItHubAPIStateVC" bundle:[NSBundle mainBundle]];
-            self.popover.contentViewController = vc;
-            //self.popover.contentViewController = [
-        }
         
+        GItHubAPIStateVC* vc = [[GItHubAPIStateVC alloc] initWithNibName:@"GItHubAPIStateVC" bundle:[NSBundle mainBundle]];
+        self.popover.contentViewController = vc;
         
-        //TODO: correct here...
-        NSSize size = self.popover.contentViewController.view.bounds.size;
-        
-        //NSRect rect = NSMakeRect(xPos, yPos, size.width, size.height);
-        
-        NSRect frame = self.window.frame;
-        NSRect conent = self.window.contentLayoutRect;
-        
-        [self.popover showRelativeToRect:conent ofView:self.window.contentView preferredEdge:NSRectEdgeMinY];
+        NSRect content = self.window.contentView.bounds; 
+        CGFloat yPos = CGRectGetMaxY(content) - 24;
+        CGFloat xPos = CGRectGetMaxX(content) - 48;
+        content.size = vc.view.bounds.size;
+        content.origin = CGPointMake(xPos, yPos);
+        [self definePopoverLimits:[self.model getSearchRateLimit]];
+        [self.popover showRelativeToRect:content ofView:self.window.contentView preferredEdge:NSRectEdgeMaxX];
+    }
+}
+
+- (void)definePopoverLimits: (GitHubRateLimit *)limit {
+    
+    GItHubAPIStateVC *vc = (GItHubAPIStateVC *)self.popover.contentViewController;
+    //TODO: handle mouse pressed outside of the window...
+    if (vc != nil) {
+        vc.searchTotalLimit = limit.limit;
+        vc.searchLeftLimit = limit.remaining;
+        vc.dateToReset = limit.resetDate;
+        if (vc.timeLeftToReset <= 0 )
+            vc.timeLeftToReset = limit.resetDiff;
     }
 }
 

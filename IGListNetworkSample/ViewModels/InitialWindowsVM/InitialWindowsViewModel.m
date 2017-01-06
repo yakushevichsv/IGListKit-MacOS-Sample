@@ -17,10 +17,12 @@
 @property (nonatomic, strong) id<IGitHubAPI> gitHubAPI;
 @property (nonatomic, strong) id<ISettings> settings;
 @property (nonatomic, strong) id<INetwork> network;
-
+@property (nonatomic, strong) GitHubRateLimit *oSearchLimit;
 @end
 
 @implementation InitialWindowsViewModel
+@synthesize searchLimitBlock = _searchLimitBlock;
+@synthesize oSearchLimit = _oSearchLimit;
 
 - (instancetype)initWithGitHubAPI:(id<IGitHubAPI> )api
                           network:(id<INetwork>)network
@@ -38,8 +40,10 @@
                 NSLog(@"Search %@", searchLimit);
                 NSLog(@"Core %@", coreLimit);
             }
-            else
+            else {
                 [wSelf.settings setSearchRateLimit:searchLimit];
+                wSelf.oSearchLimit = searchLimit;
+            }
         }];
     }
     return self;
@@ -64,12 +68,14 @@
     return [self.settings searchRateLimit];
 }
 
-- (void)setSearchLimitBlock:(nullable void(^)(GitHubRateLimit* __nullable limit))block {
-    __weak typeof(self) wSelf = self;
-    [self.network setRateLimitBlock:^(GitHubRateLimit * _Nullable rateLimit) {
-        [wSelf.settings setSearchRateLimit:rateLimit];
-        block(rateLimit);
-    }];
+- (GitHubRateLimit *)getOriginalSearchRateLimit {
+    return self.oSearchLimit;
+}
+
+#pragma mark - GitHubSearchRepositoryDelegate
+- (void)didGetSearchLimit:(GitHubRateLimit *)limit {
+    [self.settings setSearchRateLimit:limit];
+    self.searchLimitBlock(limit);
 }
 
 @end

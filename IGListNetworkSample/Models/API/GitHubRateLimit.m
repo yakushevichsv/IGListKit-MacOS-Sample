@@ -17,7 +17,7 @@ static NSString *kReset = @"reset";
 @property (nonatomic, readwrite) NSInteger limit;
 @property (nonatomic, readwrite) NSInteger remaining;
 @property (nonatomic, readwrite) NSDate *resetDate;
-
+@property (nonatomic, readwrite) NSInteger resetDiff;
 @end
 
 @implementation GitHubRateLimit
@@ -29,6 +29,9 @@ static NSString *kReset = @"reset";
         self.remaining = [dic[kRemaining] integerValue];
         NSTimeInterval interval = [dic[kReset] isKindOfClass:[NSNumber class]] ? [dic[kReset] doubleValue] : 0;
         self.resetDate = interval != 0 ?  [NSDate dateWithTimeIntervalSince1970: interval]: dic[kReset];
+        if (self.resetDate) {
+            self.resetDiff = MAX(floor([self.resetDate timeIntervalSinceDate:[NSDate date]]), 0);
+        }
     }
     return self;
 }

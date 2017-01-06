@@ -10,4 +10,9 @@
 
 @interface GItHubAPIStateVC : NSViewController
 
+@property (nonatomic) NSInteger timeLeftToReset;
+@property (nonatomic) NSDate *dateToReset;
+@property (nonatomic) NSInteger searchTotalLimit;
+@property (nonatomic) NSInteger searchLeftLimit;
+
 @end

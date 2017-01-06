@@ -18,6 +18,8 @@
 - (void)setGitHubReachabilityBlock:(nullable void (^)(BOOL available))block;
 
 - (nullable GitHubRateLimit *)getSearchRateLimit;
-- (void)setSearchLimitBlock:(nullable void(^)(GitHubRateLimit* __nullable limit))block;
+- (nullable GitHubRateLimit *)getOriginalSearchRateLimit;
+
+@property (nonatomic, copy)   void (^ _Nullable searchLimitBlock)(GitHubRateLimit* _Nonnull  user);//nullable void(^searchLimitBlock)(GitHubRateLimit* _Nonnull limit);
 
 @end

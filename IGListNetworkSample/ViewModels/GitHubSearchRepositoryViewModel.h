@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "IGitHubSearchRepositoryViewModel.h"
 #import "INetwork.h"
+
+@class GitHubRateLimit;
+@protocol GitHubSearchRepositoryDelegate<NSObject>
+- (void)didGetSearchLimit:(GitHubRateLimit *)limit;
+@end
+
 @interface GitHubSearchRepositoryViewModel : NSObject<IGitHubSearchRepositoryViewModel>
 - (instancetype)initWithNetwork:(id<INetwork>)network;
+@property (nonatomic, weak) id<GitHubSearchRepositoryDelegate> delegate;
 @end

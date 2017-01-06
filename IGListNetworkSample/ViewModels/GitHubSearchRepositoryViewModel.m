@@ -7,6 +7,8 @@
 //
 
 #import "GitHubSearchRepositoryViewModel.h"
+#import "GitHubSearchInfo.h"
+#import "GitHubSearchError.h"
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
@@ -27,12 +29,6 @@ typedef NSArray<GitHubRepository *> RepoArray;
         self.network = network;
         self.isSearching = [RACBehaviorSubject behaviorSubjectWithDefaultValue:@(false)];
         self.repositories = [NSArray array];
-        //TODO: add support of rate limit....
-        /*
-         "X-RateLimit-Limit" = 10;
-         "X-RateLimit-Remaining" = 0;
-         "X-RateLimit-Reset" = 1482843086;
-         */
     }
     return self;
 }
@@ -45,18 +41,19 @@ typedef NSArray<GitHubRepository *> RepoArray;
     [self.isSearching sendNext:@(true)];
     RACSubject * signal = [RACSubject subject];
     __weak typeof(self) wSelf = self;
-    BOOL scheduled = [self.network searchRepositories:query startIndex:0 completion:^(RepoArray *repositories, NSError *error) {
+    BOOL scheduled = [self.network searchRepositories:query startIndex:0 completion:^(GitHubSearchInfo *searchInfo, NSError *error) {
         NSLog(@"Finished Searching Repo is Error %@",error);
+        
+        GitHubRateLimit *rateLimit;
         
         if (error == nil) {
             
             NSMutableArray *mArray = [NSMutableArray new];
             NSArray *tempArray = [wSelf.repositories copy];
             
-            /*if (tempArray.count)
-                [mArray addObjectsFromArray:tempArray];*/
-            [mArray addObjectsFromArray:repositories];
-            
+            if (searchInfo.repositories.count)
+                [mArray addObjectsFromArray:searchInfo.repositories];
+            rateLimit = searchInfo.rateLimit;
             IGListIndexSetResult *result = IGListDiff(tempArray, mArray , IGListDiffEquality);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [wSelf.isSearching sendNext:@(false)];
@@ -66,11 +63,16 @@ typedef NSArray<GitHubRepository *> RepoArray;
             });
         }
         else {
+            if ([error isKindOfClass:[GitHubSearchError class]])
+                rateLimit = ((GitHubSearchError *)error).rateLimit;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [wSelf.isSearching sendNext:@(false)];
                 [signal sendError:error];
             });
         }
+        
+        if (rateLimit)
+            [wSelf.delegate didGetSearchLimit:rateLimit];
     } cancel:^{
         [self.isSearching sendNext:@(false)];
         [signal sendCompleted];
