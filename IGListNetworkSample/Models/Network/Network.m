@@ -87,7 +87,7 @@ static Network *sNetwork = nil;
     
     static NSInteger perPage = 30;
     
-    NSInteger pageNumber = index/perPage + 1;
+    NSInteger pageNumber = index + 1;
     
     NSDictionary *parameters = @{@"q":query,
                                  @"order":@"desc",
@@ -98,7 +98,6 @@ static Network *sNetwork = nil;
     self.currentTask =  [self.manager GET:@"/search/repositories" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [wSelf cancelCurrentActiveSearch];
         NSDictionary *dic = (NSDictionary *)responseObject;
-        NSLog(@"JSON response %@", dic);
         //TODO: use Mapper library....
         
         NSUInteger tCount = dic[@"total_count"] != nil ? [dic[@"total_count"] integerValue] : 0;

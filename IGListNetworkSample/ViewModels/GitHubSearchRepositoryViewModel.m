@@ -20,6 +20,9 @@ typedef NSArray<GitHubRepository *> RepoArray;
 @property (nonatomic,strong) RepoArray *repositories;
 @property (nonatomic,readwrite) RACSubject *isSearching;
 
+@property (nonatomic) NSString *latestQuery;
+@property (nonatomic) GitHubSearchInfo *latestSearchInfo;
+@property (nonatomic) BOOL searching;
 @end
 
 @implementation GitHubSearchRepositoryViewModel
@@ -29,27 +32,41 @@ typedef NSArray<GitHubRepository *> RepoArray;
         self.network = network;
         self.isSearching = [RACBehaviorSubject behaviorSubjectWithDefaultValue:@(false)];
         self.repositories = [NSArray array];
+        RAC(self,searching) = self.isSearching;
     }
     return self;
 }
 
-
 #pragma mark - IGitHubSearchRepository
 
+- (BOOL)canSearch {
+    return !([self.latestSearchInfo lastSearch] || self.searching);
+}
+
+- (RACSignal *)nextPageSearchRepositories {
+    if (self.searching) return nil;
+    return [self searchPrivateRepositories:self.latestQuery withPageIndex:self.latestSearchInfo.nextPage - 1];
+}
+
 - (RACSignal *)searchRepositories:(NSString *)query  {
- 
+    return [self searchPrivateRepositories:query withPageIndex:0];
+}
+
+- (RACSignal *)searchPrivateRepositories:(NSString *)query withPageIndex:(NSInteger)pageIndex  {
+    NSLog(@" %s Page Index %ld", __FUNCTION__, (long)pageIndex);
     [self.isSearching sendNext:@(true)];
     RACSubject * signal = [RACSubject subject];
     __weak typeof(self) wSelf = self;
-    BOOL scheduled = [self.network searchRepositories:query startIndex:0 completion:^(GitHubSearchInfo *searchInfo, NSError *error) {
+    BOOL scheduled = [self.network searchRepositories:query startIndex:pageIndex completion:^(GitHubSearchInfo *searchInfo, NSError *error) {
         NSLog(@"Finished Searching Repo is Error %@",error);
         
         GitHubRateLimit *rateLimit;
         
         if (error == nil) {
             
-            NSMutableArray *mArray = [NSMutableArray new];
+            
             NSArray *tempArray = [wSelf.repositories copy];
+            NSMutableArray *mArray = [NSMutableArray arrayWithArray:tempArray];
             
             if (searchInfo.repositories.count)
                 [mArray addObjectsFromArray:searchInfo.repositories];
@@ -57,6 +74,9 @@ typedef NSArray<GitHubRepository *> RepoArray;
             IGListIndexSetResult *result = IGListDiff(tempArray, mArray , IGListDiffEquality);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [wSelf.isSearching sendNext:@(false)];
+                wSelf.latestSearchInfo = searchInfo;
+                wSelf.latestSearchInfo.repositories = nil;
+                wSelf.latestQuery = query;
                 wSelf.repositories = mArray;
                 [signal sendNext:result];
                 [signal sendCompleted];
@@ -74,8 +94,10 @@ typedef NSArray<GitHubRepository *> RepoArray;
         if (rateLimit)
             [wSelf.delegate didGetSearchLimit:rateLimit];
     } cancel:^{
-        [self.isSearching sendNext:@(false)];
-        [signal sendCompleted];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wSelf.isSearching sendNext:@(false)];
+            [signal sendCompleted];
+        });
     }];
     
     if (!scheduled)

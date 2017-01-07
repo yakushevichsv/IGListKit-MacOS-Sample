@@ -112,6 +112,10 @@ static NSString *kWarning = @"warning";
             GitHubRateLimit *limit = self.remainingCount != 0 ? [self.model getSearchRateLimit] : [self.model getOriginalSearchRateLimit];
             [self definePopoverLimits:limit];
             [self configure:obj withRateLimit:limit];
+            if (!self.remainingCount && [self.contentViewController conformsToProtocol:@protocol(SearchRestorable)]){
+                NSObject<SearchRestorable> *restorable = (NSObject<SearchRestorable> *)self.contentViewController;
+                [restorable restoreSearchOnNeed];
+            }
             *stop = YES;
         }
     }];}
@@ -180,7 +184,6 @@ static NSString *kWarning = @"warning";
 }
 
 - (nullable NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
-    NSLog(@"Flag %hhd", flag);
     NSParameterAssert([toolbar.identifier isEqualToString:kToolbarIdentifier]);
     
     if ([itemIdentifier isEqualToString:NSToolbarFlexibleSpaceItemIdentifier])

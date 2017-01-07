@@ -21,6 +21,10 @@
 @protocol IGitHubSearchRepository <ICollectionItemsDataSource>
 
 - (RACSignal *)searchRepositories:(NSString *)query;
+- (RACSignal *)nextPageSearchRepositories;
+- (BOOL)canSearch;
+
+
 @property (nonatomic,readonly) RACSubject *isSearching;
 
 @end

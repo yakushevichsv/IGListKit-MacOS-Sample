@@ -12,9 +12,13 @@
 - (BOOL)needToHandleClick:(NSPoint)point;
 @end
 
+@protocol SearchRestorable<NSObject>
+- (BOOL)restoreSearchOnNeed;
+@end
+
 @protocol IGitHubSearchRepositoryViewModel;
 
-@interface GitHubSearchRepositoryVC : NSViewController<MouseClickObserver>
+@interface GitHubSearchRepositoryVC : NSViewController<MouseClickObserver, SearchRestorable>
 
 @property (nonatomic, strong) id<IGitHubSearchRepositoryViewModel> model;
 

@@ -57,43 +57,44 @@
         return [wSelf.model searchRepositories:value];
     }] subscribeOn:[RACScheduler mainThreadScheduler] ]
      subscribeNext:^(IGListIndexSetResult * result) {
-        
-         NSLog(@"Results %@", [result debugDescription]);
-         
-         if (result.hasChanges)
-         [wSelf.cvRepository performBatchUpdates:^{
-             
-             //[wSelf.cvRepository insertItemsAtIndexPaths:result.inserts];
-             
-             [result.inserts enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-                 [wSelf.cvRepository insertItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
-             }];
-             
-             //[wSelf.cvRepository deleteItemsAtIndexPaths:result.deletes];
-             
-             [result.deletes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-                 [wSelf.cvRepository deleteItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
-             }];
-             
-             //[wSelf.cvRepository reloadItemsAtIndexPaths:result.updates];
-             
-             [result.updates enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-                 [wSelf.cvRepository reloadItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
-             }];
-             
-             [result.moves enumerateObjectsUsingBlock:^(IGListMoveIndex * _Nonnull move, NSUInteger idx, BOOL * _Nonnull stop) {
-                 [wSelf.cvRepository moveItemAtIndexPath:[NSIndexPath indexPathForItem:move.from inSection:0] toIndexPath:[NSIndexPath indexPathForItem:move.to inSection:0]];
-             }];
-         } completionHandler:^(BOOL finished) {
-             
-         }];
-         
-         
+         [wSelf updateCollectionWithResult:result];
     } error:^(NSError * _Nullable error) {
         
     } completed:^{
         
     }];
+}
+
+- (void)updateCollectionWithResult:(IGListIndexSetResult *)result {
+    NSLog(@"Results %@", [result debugDescription]);
+    
+    if (result.hasChanges)
+        [self.cvRepository performBatchUpdates:^{
+            
+            //[wSelf.cvRepository insertItemsAtIndexPaths:result.inserts];
+            
+            [result.inserts enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.cvRepository insertItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+            }];
+            
+            //[wSelf.cvRepository deleteItemsAtIndexPaths:result.deletes];
+            
+            [result.deletes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.cvRepository deleteItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+            }];
+            
+            //[wSelf.cvRepository reloadItemsAtIndexPaths:result.updates];
+            
+            [result.updates enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.cvRepository reloadItemsAtIndexPaths:[NSMutableSet setWithObject:[NSIndexPath indexPathForItem:idx inSection:0]]];
+            }];
+            
+            [result.moves enumerateObjectsUsingBlock:^(IGListMoveIndex * _Nonnull move, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.cvRepository moveItemAtIndexPath:[NSIndexPath indexPathForItem:move.from inSection:0] toIndexPath:[NSIndexPath indexPathForItem:move.to inSection:0]];
+            }];
+        } completionHandler:^(BOOL finished) {
+            
+        }];
 }
 
 - (void)setup {
@@ -241,7 +242,15 @@
 }
 
 #pragma mark - NSCollectionViewDelegate
+- (void)collectionView:(NSCollectionView *)collectionView willDisplayItem:(NSCollectionViewItem *)item forRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
+    [self restoreSearchOnNeed:indexPath];
+}
 
+- (void)collectionView:(NSCollectionView *)collectionView didEndDisplayingItem:(NSCollectionViewItem *)item forRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.item + 1 == [collectionView numberOfItemsInSection:indexPath.section]) {
+        NSLog(@"Lates item did End");
+    }
+}
 
 #pragma mark - MouseClickObserver
 - (BOOL)needToHandleClick:(NSPoint)point {
@@ -256,6 +265,34 @@
     }
     
     return !contains;
+}
+
+#pragma mark - SearchRestorable
+- (BOOL)restoreSearchOnNeed {
+    NSInteger cNumber =  [self.cvRepository numberOfItemsInSection:self.cvRepository.numberOfSections-1];
+    NSCollectionViewItem * lItem = [self.cvRepository itemAtIndex:cNumber - 1];
+    if ([[self.cvRepository visibleItems] containsObject:lItem]) {
+        return [self restoreSearchOnNeed:[self.cvRepository indexPathForItem:lItem]];
+    }
+    return NO;
+}
+
+- (BOOL)restoreSearchOnNeed:(NSIndexPath *)indexPath {
+    NSInteger cNumber =  [self.cvRepository numberOfItemsInSection:self.cvRepository.numberOfSections-1];
+    NSInteger lNumber = indexPath.item + 1;
+    
+    if (lNumber == cNumber && [self.model canSearch]) {
+        __weak typeof(self) wSelf = self;
+        [[[self.model nextPageSearchRepositories] subscribeOn:[RACScheduler mainThreadScheduler]] subscribeNext:^(IGListIndexSetResult * result) {
+            [wSelf updateCollectionWithResult:result];
+        } error:^(NSError * _Nullable error) {
+            NSLog(@"Error %@", [error debugDescription]);
+        } completed:^{
+            
+        }];
+        return YES;
+    }
+    return NO;
 }
 
 @end
