@@ -38,6 +38,7 @@ Carthage/
 .DS_Store
 IGListNetworkSample.xcodeproj/xcuserdata/
 IGListNetworkSample.xcodeproj/project.xcworkspace/xcshareddata/
+IGListNetworkSample.xcodeproj/project.xcworkspace/xcuserdata/
 .idea/
 ./AFNetworking/*
 ./IGListKit/*
@@ -45,9 +46,6 @@ IGListNetworkSample.xcodeproj/project.xcworkspace/xcshareddata/
 *.xcbkptlist
 *.xcuserstate
 README.md
-
-IGListNetworkSample.xcodeproj/project.xcworkspace/xcshareddata
-IGListNetworkSample.xcodeproj/project.xcworkspace/xcuserdata
 
 
 

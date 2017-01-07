@@ -66,7 +66,7 @@ typedef NSArray<GitHubRepository *> RepoArray;
             
             
             NSArray *tempArray = [wSelf.repositories copy];
-            NSMutableArray *mArray = [NSMutableArray arrayWithArray:tempArray];
+            NSMutableArray *mArray = !pageIndex ? [NSMutableArray array] : [NSMutableArray arrayWithArray:tempArray];
             
             if (searchInfo.repositories.count)
                 [mArray addObjectsFromArray:searchInfo.repositories];
@@ -83,11 +83,17 @@ typedef NSArray<GitHubRepository *> RepoArray;
             });
         }
         else {
-            if ([error isKindOfClass:[GitHubSearchError class]])
+            BOOL isGitLimit = [error isKindOfClass:[GitHubSearchError class]];
+            if (isGitLimit)
                 rateLimit = ((GitHubSearchError *)error).rateLimit;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [wSelf.isSearching sendNext:@(false)];
-                [signal sendError:error];
+                if (isGitLimit)
+                    [signal sendCompleted];
+                else {
+                    //TODO: think how not to send Error...
+                    [signal sendError:error];
+                }
             });
         }
         

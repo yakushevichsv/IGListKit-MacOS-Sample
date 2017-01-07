@@ -59,7 +59,7 @@
      subscribeNext:^(IGListIndexSetResult * result) {
          [wSelf updateCollectionWithResult:result];
     } error:^(NSError * _Nullable error) {
-        
+        NSLog(@"Error failed !@!! %@", error);
     } completed:^{
         
     }];
