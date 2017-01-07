@@ -113,7 +113,16 @@
     [self subscribeForMenu];
     if ([self isBottomBarMarkedInMenu])
         [self displayBottomStatusBar:NO];
-    
+}
+
+- (BOOL)becomeFirstResponder {
+    BOOL canBecome = [self.sfRepository becomeFirstResponder];
+    if (canBecome) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.view.window makeFirstResponder:self.sfRepository];
+        });
+    }
+    return canBecome;
 }
 
 - (void)dealloc {
@@ -233,5 +242,20 @@
 
 #pragma mark - NSCollectionViewDelegate
 
+
+#pragma mark - MouseClickObserver
+- (BOOL)needToHandleClick:(NSPoint)point {
+    
+    NSArray<NSValue *> *items = @[ [NSValue valueWithRect:self.sfRepository.frame],  [NSValue valueWithRect: self.btnSearch.frame]];
+    
+    BOOL contains = NO;
+    
+    for (NSValue *value in items) {
+        contains |= CGRectContainsPoint([value rectValue], point);
+        if (contains) break;
+    }
+    
+    return !contains;
+}
 
 @end

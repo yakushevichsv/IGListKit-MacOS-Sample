@@ -121,6 +121,10 @@
     [self defineAPIStatusLabel];
 }
 
-
+#pragma mark - MouseClickObserver
+- (BOOL)needToHandleClick:(NSPoint)point {
+    BOOL contains = CGRectContainsPoint(self.view.bounds, point);
+    return !contains;
+}
 
 @end

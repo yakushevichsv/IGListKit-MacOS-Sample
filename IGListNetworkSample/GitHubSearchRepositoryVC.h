@@ -7,9 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+
+@protocol MouseClickObserver <NSObject>
+- (BOOL)needToHandleClick:(NSPoint)point;
+@end
+
 @protocol IGitHubSearchRepositoryViewModel;
 
-@interface GitHubSearchRepositoryVC : NSViewController
+@interface GitHubSearchRepositoryVC : NSViewController<MouseClickObserver>
 
 @property (nonatomic, strong) id<IGitHubSearchRepositoryViewModel> model;
 

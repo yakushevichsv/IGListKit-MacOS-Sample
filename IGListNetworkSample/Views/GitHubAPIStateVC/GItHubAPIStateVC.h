@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "GitHubSearchRepositoryVC.h"
 
-@interface GItHubAPIStateVC : NSViewController
+@interface GItHubAPIStateVC : NSViewController<MouseClickObserver>
 
 @property (nonatomic) NSInteger timeLeftToReset;
 @property (nonatomic) NSDate *dateToReset;

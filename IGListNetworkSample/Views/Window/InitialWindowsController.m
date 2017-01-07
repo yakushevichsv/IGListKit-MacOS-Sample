@@ -98,6 +98,8 @@ static NSString *kWarning = @"warning";
             *stop = YES;
         }
     }];
+    
+    [self.window makeFirstResponder:self.contentViewController];
 }
 
 - (void)timerFired {
@@ -234,10 +236,24 @@ static NSString *kWarning = @"warning";
         if (self.popover == nil) {
             self.popover = [NSPopover new];
             self.monitor = [[EventMonitor alloc] initWithMask:NSEventMaskLeftMouseDown | NSEventMaskRightMouseDown handler:^NSEvent *(NSEvent *event) {
-                //NSLog(@"Event %@", [event debugDescription]);
-                //NSSet<NSTouch *> *set = [event allTouches];
-                //NSLog(@"Set %@",set);
-                if (self.popover.isShown) {
+                
+                NSPoint eventLocation = [event locationInWindow];
+                
+                NSArray<NSViewController *> *items = @[self.contentViewController, self.popover.contentViewController];
+                
+                BOOL dismiss = YES;
+                for (NSViewController *item in items) {
+                    if ([item conformsToProtocol:@protocol(MouseClickObserver)]) {
+                        NSPoint fLocation = [item.view convertPoint:eventLocation fromView:nil];
+                        NSObject<MouseClickObserver>* pItem = (NSObject<MouseClickObserver>*)item;
+                        
+                        dismiss = [pItem needToHandleClick:fLocation];
+                        if (!dismiss) break;
+                    }
+                }
+                
+                
+                if (dismiss && self.popover.isShown) {
                     [self closePopover];
                     [self.monitor stop];
                 }
